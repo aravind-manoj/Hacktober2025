@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeroSection: React.FC = () => {
   return (
-    <section className="w-full h-[1117px] relative overflow-hidden bg-[#3D0746] max-md:h-[800px] max-sm:h-[600px]">
+    <section className="w-full h-screen relative overflow-hidden bg-[#3D0746] max-md:h-screen max-sm:h-[600px]">
       {/* Background SVG Elements */}
       <svg
         width="1728"
