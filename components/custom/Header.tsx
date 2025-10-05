@@ -39,7 +39,7 @@ const Header: React.FC = () => {
         </Link>
       </nav>
 
-      <CustomButton variant="dark"/>
+      <CustomButton variant="dark" className="pl-6 pr-2 py-7" />
     </header>
   );
 };
