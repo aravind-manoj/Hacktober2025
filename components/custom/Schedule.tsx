@@ -98,89 +98,103 @@ const ScheduleSection: React.FC = () => {
 
   return (
     <section className="relative bg-[#19021D] min-h-screen w-full px-4 py-20 overflow-hidden">
-      {/* Title */}
-      <h2 className="text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10">
-        EVENT DETAILS
-      </h2>
 
-      {/* Main Schedule Layout */}
-      <div className="w-[90vw] max-w-[1500px] mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-0 md:items-start justify-between">
-        {/* Left: 09 AM */}
-        <div className="flex-shrink-0 max-w-6xl">
-          <div
-            className="relative rounded-xl p-6 w-[175px] h-[200px] text-center flex flex-col justify-center items-center"
-            style={{ backgroundColor: firstItem.bgColor }}
-          >
-            <div className="text-black text-xl md:text-2xl font-extrabold mb-2">
-              {firstItem.time}
-            </div>
-            {firstItem.title && (
-              <div className="text-white font-bold text-sm md:text-base leading-snug">
-                {firstItem.title}
-              </div>
-            )}
-            {firstItem.imageSrc && (
-              <Image
-                src={firstItem.imageSrc}
-                width={300}
-                height={300}
-                alt=""
-                className={firstItem.imageClass}
-              />
-            )}
-          </div>
-        </div>
+      <div
+        className="flex w-full justify-center md:justify-between"
+      >
+        <div
+          className="w-0 md:w-[15%]"
+        />
+        <div
+          className="w-full flex-shrink-0"
+        >
+          {/* Title */}
+          <h2 className="text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10">
+            EVENT DETAILS
+          </h2>
 
-        {/* Right: Grid of remaining times */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl">
-          {gridItems.map((item, index) => {
-            const backgroundColor = item.bgColor || "#421C55";
-
-            if (!item.visible) {
-              return (
-                <div
-                  key={index}
-                  className="relative rounded-xl p-4 md:p-6 w-[180px] h-[200px] text-center flex flex-col justify-center items-center bg-transparent"
-                />
-              )
-            }
-
-            return (
+          {/* Main Schedule Layout */}
+          <div className="w-[90%] max-w-[1500px] mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-0 md:items-start justify-between">
+            {/* Left: 09 AM */}
+            <div className="flex-shrink-0 max-w-6xl">
               <div
-                key={index}
-                className="relative rounded-xl p-4 md:p-6 w-[175px] h-[200px] text-center flex flex-col justify-center items-center z-10"
-                style={{ backgroundColor }}
+                className="relative rounded-xl p-6 w-[160px] h-[190px] md:p-3 md:w-[150px] md:h-[180px] text-center flex flex-col justify-center items-center"
+                style={{ backgroundColor: firstItem.bgColor }}
               >
                 <div className="text-black text-xl md:text-2xl font-extrabold mb-2">
-                  {item.time}
+                  {firstItem.time}
                 </div>
-                {item.title && (
-                  <div className="text-black font-bold text-sm md:text-base leading-snug">
-                    {item.title}
+                {firstItem.title && (
+                  <div className="text-white font-bold text-sm md:text-base leading-snug">
+                    {firstItem.title}
                   </div>
                 )}
-                {item.title && item.description && (
-                  <div className="w-20 h-[1px] bg-black/50 my-2" />
-                )}
-                {item.description && (
-                  <div className="text-black text-xs md:text-sm">
-                    {item.description}
-                  </div>
-                )}
-                {item.imageSrc && (
+                {firstItem.imageSrc && (
                   <Image
-                    src={item.imageSrc}
+                    src={firstItem.imageSrc}
                     width={300}
                     height={300}
                     alt=""
-                    className={item.imageClass || ""}
+                    className={firstItem.imageClass}
                   />
                 )}
               </div>
-            );
-          })}
+            </div>
+
+            {/* Right: Grid of remaining times */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl">
+              {gridItems.map((item, index) => {
+                const backgroundColor = item.bgColor || "#421C55";
+
+                if (!item.visible) {
+                  return (
+                    <div
+                      key={index}
+                      className="relative rounded-xl p-4 w-[160px] h-[190px] md:p-3 md:w-[150px] md:h-[180px] text-center flex flex-col justify-center items-center bg-transparent"
+                    />
+                  )
+                }
+
+                return (
+                  <div
+                    key={index}
+                    className="relative rounded-xl p-4 w-[160px] h-[190px] md:p-3 md:w-[150px] md:h-[180px] text-center flex flex-col justify-center items-center z-10"
+                    style={{ backgroundColor }}
+                  >
+                    <div className="text-black text-xl md:text-2xl font-extrabold mb-2">
+                      {item.time}
+                    </div>
+                    {item.title && (
+                      <div className="text-black font-bold text-sm md:text-base leading-snug">
+                        {item.title}
+                      </div>
+                    )}
+                    {item.title && item.description && (
+                      <div className="w-20 h-[1px] bg-black/50 my-2" />
+                    )}
+                    {item.description && (
+                      <div className="text-black text-xs md:text-sm">
+                        {item.description}
+                      </div>
+                    )}
+                    {item.imageSrc && (
+                      <Image
+                        src={item.imageSrc}
+                        width={300}
+                        height={300}
+                        alt=""
+                        className={item.imageClass || ""}
+                      />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
+
+
 
       <Image
         src={"/assets/objects/spider.png"}

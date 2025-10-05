@@ -53,14 +53,14 @@ const HeroSection: React.FC = () => {
           />
         </div>
       ) : (
-        <div className="flex flex-col w-full items-center justify-center mt-[250px] gap-3">
+        <div className="flex flex-col w-full items-center justify-center mt-[200px] gap-3">
           {/* Main title */}
           <Image
             src={"/assets/hacktober.png"}
             width={800}
             height={400}
             alt="Main title"
-            className="h-auto w-[90vw] min-w-[420px]"
+            className="h-auto w-[99vw] min-[600px]:w-[90vw] min-w-[380px]"
           />
 
           {/* Subtitle */}
