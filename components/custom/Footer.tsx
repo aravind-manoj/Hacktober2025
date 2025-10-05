@@ -1,4 +1,5 @@
-import React from 'react';
+import Link from "next/link";
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   const socialLinks = [
@@ -42,42 +43,36 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="w-full h-[361px] relative bg-[#030303] max-sm:h-[300px]">
+    <footer className="w-full h-[350px] bg-[#030303] flex flex-col items-center justify-around">
+      <Image
+        src={"/assets/hacktober_green.png"}
+        width={300}
+        height={300}
+        alt="hacktober"
+        className="w-[300px] h-auto"
+      />
+
       {/* Social Media Links */}
-      <div className="flex gap-7 absolute left-[752px] top-[196px] max-sm:gap-5 max-sm:left-[150px] max-sm:top-[50px]">
-        {socialLinks.map((link, index) => (
-          <a
+      <div className="flex flex-row gap-6">
+        {socialLinks.map((socialLink, index) => (
+          <Link
             key={index}
-            href={link.href}
+            href={socialLink.href}
             target="_blank"
-            rel="noopener noreferrer"
-            className="w-14 h-14 relative hover:scale-110 transition-transform"
-            aria-label={`Follow us on ${link.name}`}
+            rel="noreferrer"
+            className="flex items-center gap-2 text-white text-xl font-medium cursor-pointer"
           >
-            <div className="w-14 h-14 absolute">
-              <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="28" cy="28" r="28" fill="#232222" />
-              </svg>
-            </div>
-            <div className="absolute left-[11px] top-[11px]">
-              {link.icon}
-            </div>
-          </a>
+            {socialLink.icon}
+            <span>{socialLink.name}</span>
+          </Link>
         ))}
       </div>
 
-      {/* Divider */}
-      <div className="w-[1368px] h-0 absolute bg-[rgba(98,255,0,0.24)] left-[180px] top-[282px]" />
-
-      {/* Logo */}
-      <img
-        src="https://api.builder.io/api/v1/image/assets/TEMP/cc728065830b40c207a2aa691c58c95627f67391?width=716"
-        alt="Hacktober Logo"
-        className="w-[358px] h-[149px] absolute left-[685px] top-[3px] max-sm:w-[200px] max-sm:h-[83px] max-sm:left-[100px] max-sm:top-[150px]"
+      <div
+        className="w-[80%] h-[1px] bg-[#62FF003D]"
       />
-
       {/* Copyright */}
-      <p className="text-white text-xl font-normal leading-[41px] absolute w-[361px] h-[41px] left-[684px] top-[305px] max-sm:text-sm max-sm:w-[300px] max-sm:text-center max-sm:left-[50px] max-sm:top-[250px]">
+      <p className="text-white text-lg font-serif">
         © 2025 Hacktober. All rights reserved.
       </p>
     </footer>

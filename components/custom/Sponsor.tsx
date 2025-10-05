@@ -1,12 +1,30 @@
-import React from 'react';
+import Image from "next/image";
 
 const SponsorsSection: React.FC = () => {
   return (
-    <section id="sponsors" className="w-screen min-h-screen relative bg-[#fff] flex items-center justify-center">
-      <img
-        src="https://api.builder.io/api/v1/image/assets/TEMP/fc752ea0f6a775d409e93a0a53e7415860454adf?width=3456"
-        alt="Sponsors - Companies and organizations supporting Hacktober event"
-        className="w-full h-full object-cover"
+    <section className="bg-[url('/assets/sponsor-bg.png')] bg-contain w-full h-screen relative overflow-hidden max-h-[900px]">
+      {/* Title */}
+      <h2 className="text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10">
+        SPONSORS
+      </h2>
+
+      {/* Content */}
+      
+
+      {/* Ground Decoration */}
+      <Image
+        src={"/assets/sponsor-item-1.svg"}
+        width={800}
+        height={200}
+        alt="ground"
+        className="w-full absolute bottom-0 left-0"
+      />
+      <Image
+        src={"/assets/sponsor-item-2.svg"}
+        width={800}
+        height={200}
+        alt="ground"
+        className="w-full absolute bottom-0 right-0"
       />
     </section>
   );

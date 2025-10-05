@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-const FAQSection: React.FC = () => {
+const ContactSection: React.FC = () => {
   return (
-    <section className="relative bg-[#2B0032] min-h-screen w-full px-4 py-20 overflow-hidden">
+    <section className="relative bg-[#34043C] min-h-screen w-full px-4 py-20 overflow-hidden">
       {/* Title */}
       <h2 className="text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10">
-        Frequently Asked <br/> Questions
+        CONTACT
       </h2>
 
       {/* Content */}
@@ -13,21 +13,14 @@ const FAQSection: React.FC = () => {
 
       {/* Ground Decoration */}
       <Image
-        src={"/assets/faq-item-1.svg"}
+        src={"/assets/contact-item-1.svg"}
         width={800}
         height={200}
         alt="ground"
         className="w-full absolute bottom-0 left-0"
       />
-      <Image
-        src={"/assets/faq-item-2.svg"}
-        width={800}
-        height={200}
-        alt="ground"
-        className="w-full absolute bottom-0 right-0"
-      />
     </section>
   );
 };
 
-export default FAQSection;
+export default ContactSection;
