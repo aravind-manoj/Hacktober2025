@@ -5,16 +5,17 @@ import ScheduleSection from '@/components/custom/Schedule';
 import FAQSection from '@/components/custom/FAQ';
 import SponsorsSection from "@/components/custom/Sponsor";
 import Footer from '@/components/custom/Footer';
+
 export default function Home() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <HeroSection />
-      <AboutSection />
+      {/* <AboutSection />
       <ScheduleSection />
       <FAQSection />
       <SponsorsSection />
-      <Footer />
+      <Footer /> */}
     </>
   );
 }
