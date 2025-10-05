@@ -99,25 +99,9 @@ const ScheduleSection: React.FC = () => {
   return (
     <section className="relative bg-[#1A001E] min-h-screen w-full px-4 py-20 overflow-hidden">
       {/* Title */}
-      <h2 className="text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20">
+      <h2 className="text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10">
         EVENT DETAILS
       </h2>
-
-      {/* Decoration (Web) */}
-      <svg
-        width="503"
-        height="342"
-        viewBox="0 0 503 342"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="absolute left-[-6px] top-[-211px] w-[507px] h-[549px]"
-      >
-        <path
-          d="M2.64205 338L86.1818 259.359M2.64205 338L66.5211 239.425M2.64205 338L13.4706 220.717M52.3338 -200.207L41.4388 -82.2045M358.406 -211L235.777 -21.7641M501 -131.132L341.122 19.3696M86.1818 259.359C80.9965 260.389 69.805 257.845 66.5211 239.425M86.1818 259.359L131.818 216.4M66.5211 239.425C58.9286 243.502 37.6891 245.469 13.4706 220.717M66.5211 239.425L132.993 136.848M13.4706 220.717C10.8213 225.754 3.79432 232.805 -3.11932 220.717M13.4706 220.717L19.5824 154.52M-4.55966 151.642C-0.707838 157.638 9.51313 166.608 19.5824 154.52M19.5824 154.52C24.9782 176.586 49.5972 214.408 99.1449 189.081C98.6014 203.464 104.375 229.063 131.818 216.4M19.5824 154.52L25.3621 91.9214M131.818 216.4L247.5 107.501M25.3621 91.9214C21.8697 99.3565 10.996 109.766 -4.55966 91.9214M25.3621 91.9214C40.114 114.198 82.2929 154.37 132.993 136.848M25.3621 91.9214L32.9354 9.89514M132.993 136.848C134.673 152.333 146.82 180.136 181.964 167.472M132.993 136.848L183.089 59.5426M247.5 107.501C228.805 113.341 189.749 111.924 183.089 59.5426M247.5 107.501L341.122 19.3696M183.089 59.5426C154.898 71.5347 85.4008 78.3942 32.9354 9.89514M183.089 59.5426L235.777 -21.7641M32.9354 9.89514C27.8788 18.0498 13.0125 28.6029 -6 5.57797M32.9354 9.89514L41.4388 -82.2045M41.4388 -82.2045C34.508 -73.81 15.317 -65.0797 -6 -97.3146M41.4388 -82.2045C82 -37 161.5 -2 235.777 -21.7641M235.777 -21.7641C254.808 4.21933 302.521 48.8229 341.122 19.3696"
-          stroke="#77008A"
-          strokeWidth="3"
-        />
-      </svg>
 
       {/* Main Schedule Layout */}
       <div className="w-[90vw] max-w-[1500px] mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-0 md:items-start justify-between">
@@ -164,7 +148,7 @@ const ScheduleSection: React.FC = () => {
             return (
               <div
                 key={index}
-                className="relative rounded-xl p-4 md:p-6 w-[175px] h-[200px] text-center flex flex-col justify-center items-center"
+                className="relative rounded-xl p-4 md:p-6 w-[175px] h-[200px] text-center flex flex-col justify-center items-center z-10"
                 style={{ backgroundColor }}
               >
                 <div className="text-black text-xl md:text-2xl font-extrabold mb-2">
@@ -197,6 +181,39 @@ const ScheduleSection: React.FC = () => {
           })}
         </div>
       </div>
+
+      <Image
+        src={"/assets/objects/spider.png"}
+        width={300}
+        height={300}
+        alt=""
+        className="absolute bottom-1 md:bottom-[2vw] right-[10vw] w-20 h-auto z-10"
+      />
+
+      {/* Web Decoration */}
+      <Image
+        src={"/assets/schedule-item-1.svg"}
+        width={300}
+        height={300}
+        alt=""
+        className="absolute top-0 left-0 transform w-[400px] md:w-[600px] h-auto"
+      />
+
+      {/* Ground Decoration */}
+      <Image
+        src={"/assets/schedule-item-2.svg"}
+        width={800}
+        height={200}
+        alt="ground"
+        className="w-full absolute bottom-0 left-0"
+      />
+      <Image
+        src={"/assets/schedule-item-3.svg"}
+        width={800}
+        height={200}
+        alt="ground"
+        className="w-full absolute bottom-0 right-0"
+      />
     </section>
   );
 };
