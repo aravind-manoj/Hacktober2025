@@ -1,89 +1,84 @@
-import React from 'react';
+import React from "react";
 
 interface ScheduleItem {
   time: string;
   title?: string;
   description?: string;
-  isHighlighted?: boolean;
-  hasImage?: boolean;
+  bgColor?: string;
+  imageSrc?: string;
+  imageClass?: string;
 }
 
 const scheduleData: ScheduleItem[] = [
   {
-    time: '09 AM',
-    title: 'Inauguration Ceremony',
-    isHighlighted: true,
-    hasImage: true
+    time: "09 AM",
+    title: "Inauguration Ceremony",
+    bgColor: "#FF7426",
+    imageSrc:
+      "https://api.builder.io/api/v1/image/assets/TEMP/cb6963494263eeb242c0a517135f1eee5e0fb478?width=142",
+    imageClass: "w-[71px] h-[38px] rotate-[-5.85deg] absolute bottom-2 right-2",
   },
   {
-    time: '10 AM',
-    title: 'Hackathon Kickoff',
-    description: 'CTF (Slot 1)/ RC Zone (Slot 1)',
-    isHighlighted: true
+    time: "10 AM",
+    title: "Hackathon Kickoff",
+    description: "CTF (Slot 1)/ RC Zone (Slot 1)",
+    bgColor: "#80FF00",
+    imageSrc:
+      "https://api.builder.io/api/v1/image/assets/TEMP/3c377fade130939ed89ebe5fd98c2b62217953e8?width=160",
+    imageClass: "w-10 h-10 absolute top-2 right-2",
   },
-  { time: '11 AM' },
-  { time: '12 PM' },
+  { time: "11 AM" },
+  { time: "12 PM" },
   {
-    time: '01 PM',
-    description: 'CTF (Slot 2)/ RC Zone (Slot 2)',
-    isHighlighted: true
+    time: "01 PM",
+    description: "CTF (Slot 2)/ RC Zone (Slot 2)",
+    bgColor: "#80FF00",
+    imageSrc:
+      "https://api.builder.io/api/v1/image/assets/TEMP/828da40ef6333de6f046dcb045e3a7e2a965fbb3?width=82",
+    imageClass: "w-6 h-6 absolute bottom-2 left-2",
   },
-  { time: '02 PM' },
-  { time: '03 PM' },
+  { time: "02 PM" },
+  { time: "03 PM" },
   {
-    time: '04 PM',
-    title: 'Hackathon Submissions',
-    isHighlighted: true
+    time: "04 PM",
+    title: "Hackathon Submissions",
+    bgColor: "#80FF00",
+    imageSrc:
+      "https://api.builder.io/api/v1/image/assets/TEMP/107beedd4d3dc92252e69f19b248d69417880333?width=160",
+    imageClass: "w-8 h-8 absolute top-2 right-2",
   },
-  { time: '05 PM' },
+  { time: "05 PM" },
   {
-    time: '06 PM',
-    title: 'Halloween Party',
-    isHighlighted: true
+    time: "06 PM",
+    title: "Halloween Party",
+    bgColor: "#80FF00",
+    imageSrc:
+      "https://api.builder.io/api/v1/image/assets/TEMP/e5d278fb628358a0a0ab02c0b2845d2e7aca1fd6?width=112",
+    imageClass: "w-[50px] h-[90px] absolute bottom-2 right-2",
   },
-  { time: '07 PM' },
-  { time: '08 PM' },
+  { time: "07 PM" },
+  { time: "08 PM" },
   {
-    time: '09 PM',
-    title: 'Hacktober Ends',
-    isHighlighted: true,
-    hasImage: true
-  }
+    time: "09 PM",
+    title: "Hacktober Ends",
+    bgColor: "#FF7426",
+    imageSrc:
+      "https://api.builder.io/api/v1/image/assets/TEMP/b513186c000a7420f263925aac5baffa7be2ce01?width=164",
+    imageClass: "w-[70px] h-[40px] absolute -top-4 -right-4 rotate-[160deg]",
+  },
 ];
 
 const ScheduleSection: React.FC = () => {
+  const [firstItem, ...gridItems] = scheduleData;
+
   return (
-    <section id="schedule" className="w-screen min-h-screen relative overflow-hidden bg-[#19021D]">
-      {/* Background SVG Elements */}
-      <svg
-        width="1728"
-        height="181"
-        viewBox="0 0 1728 181"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="absolute left-[-14px] top-[1162px] w-[1743px] h-[181px]"
-      >
-        <path
-          d="M920 67C1139.63 93.1903 1728 181 1728 181H920H-14.5V0C-14.5 0 310.511 11.3239 502 23.5C693.489 35.6761 700.371 40.8097 920 67Z"
-          fill="#24002A"
-        />
-      </svg>
+    <section className="relative bg-[#1A001E] min-h-screen w-full px-4 py-20 overflow-hidden">
+      {/* Title */}
+      <h2 className="text-[#62FF00] text-6xl md:text-8xl font-extrabold text-center mb-20">
+        EVENT DETAILS
+      </h2>
 
-      <svg
-        width="1728"
-        height="181"
-        viewBox="0 0 1728 181"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="absolute left-[-15px] top-[1162px] w-[1743px] h-[181px]"
-      >
-        <path
-          d="M793 67C573.371 93.1903 -15 181 -15 181H793H1727.5V0C1727.5 0 1402.49 11.3239 1211 23.5C1019.51 35.6761 1012.63 40.8097 793 67Z"
-          fill="#2B0032"
-        />
-      </svg>
-
-      {/* Web decoration */}
+      {/* Decoration (Web) */}
       <svg
         width="503"
         height="342"
@@ -99,106 +94,77 @@ const ScheduleSection: React.FC = () => {
         />
       </svg>
 
-      {/* Title */}
-      <h2 className="text-[#62FF00] text-6xl md:text-8xl font-normal tracking-wide absolute left-1/2 transform -translate-x-1/2 top-12 text-center">
-        EVENT DETAILS
-      </h2>
-
-      {/* Arrow indicator */}
-      <svg
-        width="34"
-        height="20"
-        viewBox="0 0 34 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="absolute left-[619px] top-[634px] w-[38px] h-[26px]"
-      >
-        <path d="M17 0L33.4545 19.5H0.545517L17 0Z" fill="#D9D9D9" />
-      </svg>
-
-    {/* Schedule Grid */}
-    <div className="absolute left-1/2 transform -translate-x-1/2 top-40 w-[90%] max-w-6xl grid grid-cols-4 gap-5 md:grid-cols-3 sm:grid-cols-2">
-        {scheduleData.map((item, index) => (
+      {/* Main Schedule Layout */}
+      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-80 items-start align-middles justify-center">
+        {/* Left: 09 AM */}
+        <div className="flex-shrink-0">
           <div
-            key={index}
-            className={`relative flex flex-col items-center justify-start p-5 rounded-[10px] max-sm:p-2.5 ${
-              item.isHighlighted ? 'bg-white/10' : ''
-            }`}
+            className="relative rounded-xl p-6 w-[200px] text-center flex flex-col justify-center items-center"
+            style={{ backgroundColor: firstItem.bgColor }}
           >
-            <div
-              className={`text-center font-normal mb-2.5 max-md:text-2xl max-sm:text-lg ${
-                item.isHighlighted
-                  ? 'text-[#2B0631] text-[40px]'
-                  : 'text-[#19021D] text-[50px]'
-              }`}
-            >
-              {item.time}
+            <div className="text-black text-xl md:text-2xl font-extrabold mb-2">
+              {firstItem.time}
             </div>
-            
-            {item.title && (
-              <div className="text-[#0F0F0F] text-center text-xl font-bold leading-[22px] tracking-[0.6px] max-md:text-base max-sm:text-xs">
-                {item.title}
+            {firstItem.title && (
+              <div className="text-white font-bold text-sm md:text-base leading-snug">
+                {firstItem.title}
               </div>
             )}
-            
-            {item.title && item.description && (
-              <div className="w-[135px] h-0 bg-[rgba(0,0,0,0.50)] mx-0 my-2.5" />
-            )}
-            
-            {item.description && (
-              <div className="text-[#0B0A0A] text-center text-sm font-normal leading-[22px] tracking-[0.42px] mt-2.5 max-sm:text-[10px]">
-                {item.description}
-              </div>
-            )}
-            
-            {item.hasImage && index === 0 && (
+            {firstItem.imageSrc && (
               <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/cb6963494263eeb242c0a517135f1eee5e0fb478?width=142"
+                src={firstItem.imageSrc}
                 alt=""
-                className="w-[71px] h-[38px] rotate-[-5.85deg] absolute right-2.5 bottom-2.5"
-              />
-            )}
-            
-            {item.hasImage && index === 12 && (
-              <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/b513186c000a7420f263925aac5baffa7be2ce01?width=164"
-                alt=""
-                className="w-[82px] h-11 rotate-[-158.286deg] absolute top-[-23px] -right-5"
+                className={firstItem.imageClass}
               />
             )}
           </div>
-        ))}
+        </div>
+
+        {/* Right: Grid of remaining times */}
+        <div className="grid grid-cols-3 gap-6 w-full">
+          {gridItems.map((item, index) => {
+            const backgroundColor = item.bgColor || "#421C55";
+
+            return (
+              <div
+                key={index}
+                className="relative rounded-xl p-4 md:p-6 min-h-[100px] text-center flex flex-col justify-center items-center"
+                style={{ backgroundColor }}
+              >
+                <div className="text-black text-xl md:text-2xl font-extrabold mb-2">
+                  {item.time}
+                </div>
+                {item.title && (
+                  <div className="text-black font-bold text-sm md:text-base leading-snug">
+                    {item.title}
+                  </div>
+                )}
+                {item.title && item.description && (
+                  <div className="w-20 h-[1px] bg-black/50 my-2" />
+                )}
+                {item.description && (
+                  <div className="text-black text-xs md:text-sm">
+                    {item.description}
+                  </div>
+                )}
+                {item.imageSrc && (
+                  <img
+                    src={item.imageSrc}
+                    alt=""
+                    className={item.imageClass || ""}
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
 
-      {/* Decorative elements */}
-      <img
-        src="https://api.builder.io/api/v1/image/assets/TEMP/3c377fade130939ed89ebe5fd98c2b62217953e8?width=160"
-        alt=""
-        className="w-20 h-[60px] rotate-[19.17deg] absolute left-[1423px] top-[644px]"
-      />
-      
-      <img
-        src="https://api.builder.io/api/v1/image/assets/TEMP/e5d278fb628358a0a0ab02c0b2845d2e7aca1fd6?width=112"
-        alt=""
-        className="w-14 h-[103px] absolute left-[1217px] top-[802px]"
-      />
-      
-      <img
-        src="https://api.builder.io/api/v1/image/assets/TEMP/107beedd4d3dc92252e69f19b248d69417880333?width=160"
-        alt=""
-        className="w-20 h-[60px] rotate-[19.17deg] absolute left-[1189px] top-[327px]"
-      />
-      
-      <img
-        src="https://api.builder.io/api/v1/image/assets/TEMP/828da40ef6333de6f046dcb045e3a7e2a965fbb3?width=82"
-        alt=""
-        className="w-[41px] h-[51px] absolute left-[943px] top-[660px]"
-      />
-      
+      {/* Bottom spider image (optional) */}
       <img
         src="https://api.builder.io/api/v1/image/assets/TEMP/3a13cb68242d4990f18dd32490ad97134aec7dcb?width=310"
         alt=""
-        className="w-[155px] h-[276px] absolute left-[1260px] top-[1036px]"
+        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[90px] h-[140px]"
       />
     </section>
   );
