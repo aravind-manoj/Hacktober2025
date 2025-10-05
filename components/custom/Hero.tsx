@@ -9,15 +9,15 @@ const HeroSection: React.FC = () => {
   const isMobile = useIsMobile();
 
   return (
-    <section className="bg-[url('/assets/hero-bg.png')] bg-contain w-full h-screen relative overflow-hidden max-h-[1000px]">
+    <section className="bg-[url('/assets/hero-bg.png')] bg-contain w-full h-screen relative overflow-hidden max-h-[900px]">
       <Header />
 
       {!isMobile ? (
         <div
-          className="flex w-full items-center justify-between px-[7vw] mb-[5vw] absolute bottom-0"
+          className="flex w-full items-center justify-between px-[4vw] md:px-[7vw] lg:px-[10vw] mb-[3vw] absolute bottom-0"
         >
           <div
-            className="flex flex-col items-center md:w-[35vw] lg:w-[40vw]"
+            className="flex flex-col items-center"
           >
             {/* Main title */}
             <Image
@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
               width={800}
               height={400}
               alt="Main title"
-              className="md:w-[45vw] lg:w-[50vw] max-w-[500px] h-auto"
+              className="md:w-[50vw] lg:w-[55vw] xl:w-[50vw] max-w-[500px] h-auto"
             />
 
             {/* Subtitle */}
@@ -49,33 +49,33 @@ const HeroSection: React.FC = () => {
             width={800}
             height={800}
             alt="Item 1"
-            className="w-0 md:w-[29vw] lg:w-[30vw] max-w-[500px] h-auto z-10"
+            className="md:w-[45vw] lg:w-[40vw] xl:w-[33vw] max-w-[500px] h-auto z-10"
           />
         </div>
       ) : (
         <div className="flex flex-col w-full items-center justify-center mt-[250px] gap-3">
-            {/* Main title */}
-            <Image
-              src={"/assets/hacktober.png"}
-              width={800}
-              height={400}
-              alt="Main title"
-              className="h-auto w-[90vw] min-w-[420px]"
-            />
+          {/* Main title */}
+          <Image
+            src={"/assets/hacktober.png"}
+            width={800}
+            height={400}
+            alt="Main title"
+            className="h-auto w-[90vw] min-w-[420px]"
+          />
 
-            {/* Subtitle */}
-            <h2 className="text-[#FF7620] text-xl md:text-xl lg:text-2xl font-bold mt-5">
-              Spooktacular Hacks Await
-            </h2>
+          {/* Subtitle */}
+          <h2 className="text-[#FF7620] text-xl md:text-xl lg:text-2xl font-bold mt-5">
+            Spooktacular Hacks Await
+          </h2>
 
-            {/* Action buttons */}
-            <div className="flex py-5 gap-5">
-              <Button className="px-6 py-6 rounded-full border-4 border-orange-500 bg-transparent text-orange-500 font-bold text-lg hover:bg-orange-500 hover:text-white hover:border-orange-500 hover:scale-105 hover:shadow-lg active:scale-95 transition-all duration-300 ease-in-out cursor-pointer">
-                More Info
-              </Button>
+          {/* Action buttons */}
+          <div className="flex py-5 gap-5">
+            <Button className="px-6 py-6 rounded-full border-4 border-orange-500 bg-transparent text-orange-500 font-bold text-lg hover:bg-orange-500 hover:text-white hover:border-orange-500 hover:scale-105 hover:shadow-lg active:scale-95 transition-all duration-300 ease-in-out cursor-pointer">
+              More Info
+            </Button>
 
-              <CustomButton variant="light" className="pl-5 pr-2 py-7" />
-            </div>
+            <CustomButton variant="light" className="pl-5 pr-2 py-7" />
+          </div>
         </div>
       )}
 
