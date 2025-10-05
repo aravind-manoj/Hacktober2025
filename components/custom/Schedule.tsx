@@ -1,12 +1,13 @@
-import React from "react";
+import Image from "next/image";
 
 interface ScheduleItem {
-  time: string;
+  time?: string;
   title?: string;
   description?: string;
   bgColor?: string;
   imageSrc?: string;
   imageClass?: string;
+  visible?: boolean;
 }
 
 const scheduleData: ScheduleItem[] = [
@@ -14,57 +15,81 @@ const scheduleData: ScheduleItem[] = [
     time: "09 AM",
     title: "Inauguration Ceremony",
     bgColor: "#FF7426",
-    imageSrc:
-      "https://api.builder.io/api/v1/image/assets/TEMP/cb6963494263eeb242c0a517135f1eee5e0fb478?width=142",
-    imageClass: "w-[71px] h-[38px] rotate-[-5.85deg] absolute bottom-2 right-2",
+    imageSrc: "/assets/objects/bat.png",
+    imageClass: "w-20 h-auto rotate-[-5.85deg] absolute bottom-1 right-2",
+    visible: true,
+  },
+  {
+    visible: false,
   },
   {
     time: "10 AM",
     title: "Hackathon Kickoff",
     description: "CTF (Slot 1)/ RC Zone (Slot 1)",
     bgColor: "#80FF00",
-    imageSrc:
-      "https://api.builder.io/api/v1/image/assets/TEMP/3c377fade130939ed89ebe5fd98c2b62217953e8?width=160",
-    imageClass: "w-10 h-10 absolute top-2 right-2",
+    imageSrc: "/assets/objects/chocolate.png",
+    imageClass: "w-20 h-auto absolute top-0 right-0",
+    visible: true,
   },
-  { time: "11 AM" },
-  { time: "12 PM" },
+  {
+    time: "11 AM",
+    visible: true,
+  },
+  {
+    time: "12 PM",
+    visible: true,
+  },
   {
     time: "01 PM",
     description: "CTF (Slot 2)/ RC Zone (Slot 2)",
     bgColor: "#80FF00",
-    imageSrc:
-      "https://api.builder.io/api/v1/image/assets/TEMP/828da40ef6333de6f046dcb045e3a7e2a965fbb3?width=82",
-    imageClass: "w-6 h-6 absolute bottom-2 left-2",
+    imageSrc: "/assets/objects/chemical.png",
+    imageClass: "w-8 h-auto absolute bottom-2 left-0",
+    visible: true,
   },
-  { time: "02 PM" },
-  { time: "03 PM" },
+  {
+    time: "02 PM",
+    visible: true,
+  },
+  {
+    time: "03 PM",
+    visible: true,
+  },
   {
     time: "04 PM",
     title: "Hackathon Submissions",
     bgColor: "#80FF00",
-    imageSrc:
-      "https://api.builder.io/api/v1/image/assets/TEMP/107beedd4d3dc92252e69f19b248d69417880333?width=160",
-    imageClass: "w-8 h-8 absolute top-2 right-2",
+    imageSrc: "/assets/objects/chocolate.png",
+    imageClass: "w-20 h-auto absolute top-0 right-1",
+    visible: true,
   },
-  { time: "05 PM" },
+  {
+    time: "05 PM",
+    visible: true,
+  },
   {
     time: "06 PM",
     title: "Halloween Party",
     bgColor: "#80FF00",
-    imageSrc:
-      "https://api.builder.io/api/v1/image/assets/TEMP/e5d278fb628358a0a0ab02c0b2845d2e7aca1fd6?width=112",
-    imageClass: "w-[50px] h-[90px] absolute bottom-2 right-2",
+    imageSrc: "/assets/objects/balloons.png",
+    imageClass: "w-16 h-auto absolute bottom-2 right-1",
+    visible: true,
   },
-  { time: "07 PM" },
-  { time: "08 PM" },
+  {
+    time: "07 PM",
+    visible: true,
+  },
+  {
+    time: "08 PM",
+    visible: true,
+  },
   {
     time: "09 PM",
     title: "Hacktober Ends",
     bgColor: "#FF7426",
-    imageSrc:
-      "https://api.builder.io/api/v1/image/assets/TEMP/b513186c000a7420f263925aac5baffa7be2ce01?width=164",
-    imageClass: "w-[70px] h-[40px] absolute -top-4 -right-4 rotate-[160deg]",
+    imageSrc: "/assets/objects/bat-head.png",
+    imageClass: "w-20 h-auto absolute top-0 right-0",
+    visible: true,
   },
 ];
 
@@ -74,7 +99,7 @@ const ScheduleSection: React.FC = () => {
   return (
     <section className="relative bg-[#1A001E] min-h-screen w-full px-4 py-20 overflow-hidden">
       {/* Title */}
-      <h2 className="text-[#62FF00] text-6xl md:text-8xl font-extrabold text-center mb-20">
+      <h2 className="text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20">
         EVENT DETAILS
       </h2>
 
@@ -95,11 +120,11 @@ const ScheduleSection: React.FC = () => {
       </svg>
 
       {/* Main Schedule Layout */}
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-80 items-start align-middles justify-center">
+      <div className="w-[90vw] max-w-[1500px] mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-0 md:items-start justify-between">
         {/* Left: 09 AM */}
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 max-w-6xl">
           <div
-            className="relative rounded-xl p-6 w-[200px] text-center flex flex-col justify-center items-center"
+            className="relative rounded-xl p-6 w-[175px] h-[200px] text-center flex flex-col justify-center items-center"
             style={{ backgroundColor: firstItem.bgColor }}
           >
             <div className="text-black text-xl md:text-2xl font-extrabold mb-2">
@@ -111,8 +136,10 @@ const ScheduleSection: React.FC = () => {
               </div>
             )}
             {firstItem.imageSrc && (
-              <img
+              <Image
                 src={firstItem.imageSrc}
+                width={300}
+                height={300}
                 alt=""
                 className={firstItem.imageClass}
               />
@@ -121,14 +148,23 @@ const ScheduleSection: React.FC = () => {
         </div>
 
         {/* Right: Grid of remaining times */}
-        <div className="grid grid-cols-3 gap-6 w-full">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl">
           {gridItems.map((item, index) => {
             const backgroundColor = item.bgColor || "#421C55";
+
+            if (!item.visible) {
+              return (
+                <div
+                  key={index}
+                  className="relative rounded-xl p-4 md:p-6 w-[180px] h-[200px] text-center flex flex-col justify-center items-center bg-transparent"
+                />
+              )
+            }
 
             return (
               <div
                 key={index}
-                className="relative rounded-xl p-4 md:p-6 min-h-[100px] text-center flex flex-col justify-center items-center"
+                className="relative rounded-xl p-4 md:p-6 w-[175px] h-[200px] text-center flex flex-col justify-center items-center"
                 style={{ backgroundColor }}
               >
                 <div className="text-black text-xl md:text-2xl font-extrabold mb-2">
@@ -148,8 +184,10 @@ const ScheduleSection: React.FC = () => {
                   </div>
                 )}
                 {item.imageSrc && (
-                  <img
+                  <Image
                     src={item.imageSrc}
+                    width={300}
+                    height={300}
                     alt=""
                     className={item.imageClass || ""}
                   />
@@ -159,13 +197,6 @@ const ScheduleSection: React.FC = () => {
           })}
         </div>
       </div>
-
-      {/* Bottom spider image (optional) */}
-      <img
-        src="https://api.builder.io/api/v1/image/assets/TEMP/3a13cb68242d4990f18dd32490ad97134aec7dcb?width=310"
-        alt=""
-        className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-[90px] h-[140px]"
-      />
     </section>
   );
 };
