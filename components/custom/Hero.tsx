@@ -39,7 +39,7 @@ const HeroSection: React.FC = () => {
                 More Info
               </Button>
 
-              <CustomButton variant="light" className="pl-4 pr-1 py-5 sm:pl-4 sm:pr-1 sm:py-5 md:pl-5 md:pr-2 md:py-6" />
+              <CustomButton text="Join Event" variant="light" className="pl-4 pr-1 py-5 sm:pl-4 sm:pr-1 sm:py-5 md:pl-5 md:pr-2 md:py-6" />
             </div>
           </div>
 
@@ -74,7 +74,7 @@ const HeroSection: React.FC = () => {
               More Info
             </Button>
 
-            <CustomButton variant="light" className="pl-5 pr-2 py-7" />
+            <CustomButton text="Join Event" variant="light" className="pl-5 pr-2 py-7" />
           </div>
         </div>
       )}

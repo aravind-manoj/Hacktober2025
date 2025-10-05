@@ -97,7 +97,7 @@ const ScheduleSection: React.FC = () => {
   const [firstItem, ...gridItems] = scheduleData;
 
   return (
-    <section className="relative bg-[#1A001E] min-h-screen w-full px-4 py-20 overflow-hidden">
+    <section className="relative bg-[#19021D] min-h-screen w-full px-4 py-20 overflow-hidden">
       {/* Title */}
       <h2 className="text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10">
         EVENT DETAILS
@@ -196,7 +196,7 @@ const ScheduleSection: React.FC = () => {
         width={300}
         height={300}
         alt=""
-        className="absolute top-0 left-0 transform w-[400px] md:w-[600px] h-auto"
+        className="absolute top-0 left-0 w-[400px] md:w-[600px] h-auto"
       />
 
       {/* Ground Decoration */}
