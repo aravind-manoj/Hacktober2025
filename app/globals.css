@@ -124,3 +124,9 @@
   background-size: cover;
   background-position: center;
 }
+.contact-bg {
+  background-image: url('/assets/contact.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
