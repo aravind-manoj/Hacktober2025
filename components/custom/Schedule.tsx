@@ -7,7 +7,12 @@ const infiniteBeyond = localFont({
   src: "../../app/fonts/infinite_beyond.ttf"
 });
 
-const EventCard = ({ time, title, variant = "filled", color = "orange" }) => {
+const EventCard = ({ time, title, variant = "filled", color = "orange" }: {
+  time: string,
+  title: string,
+  variant: string,
+  color: string
+}) => {
   const colorStyles = {
     orange: {
       filled: "bg-orange-500 text-black",
@@ -21,7 +26,9 @@ const EventCard = ({ time, title, variant = "filled", color = "orange" }) => {
     },
   };
 
+  //@ts-ignore
   const cardStyle = colorStyles[color]?.[variant] || colorStyles.orange.filled;
+  //@ts-ignore
   const diagonalColor = colorStyles[color]?.diagonalFill;
 
   return (
