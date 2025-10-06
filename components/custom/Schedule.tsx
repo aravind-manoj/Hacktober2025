@@ -1,235 +1,108 @@
-import Image from "next/image";
+import React from "react";
+import { Calendar, MapPin } from "lucide-react";
 
-interface ScheduleItem {
-  time?: string;
-  title?: string;
-  description?: string;
-  bgColor?: string;
-  imageSrc?: string;
-  imageClass?: string;
-  visible?: boolean;
-}
+const EventCard = ({ time, title, variant = "filled", color = "orange" }) => {
+  const colorStyles = {
+    orange: {
+      filled: "bg-orange-500 text-black",
+      outline: "bg-transparent border-2 border-orange-500 text-white",
+      diagonalFill: "bg-orange-500"
+    },
+    lime: {
+      filled: "bg-lime-400 text-black",
+      outline: "bg-transparent border-2 border-lime-400 text-white",
+      diagonalFill: "bg-lime-400"
+    },
+  };
 
-const scheduleData: ScheduleItem[] = [
-  {
-    time: "09 AM",
-    title: "Inauguration Ceremony",
-    bgColor: "#FF7426",
-    imageSrc: "/assets/objects/bat.png",
-    imageClass: "w-20 h-auto rotate-[-5.85deg] absolute bottom-1 right-2",
-    visible: true,
-  },
-  {
-    visible: false,
-  },
-  {
-    time: "10 AM",
-    title: "Hackathon Kickoff",
-    description: "CTF (Slot 1)/ RC Zone (Slot 1)",
-    bgColor: "#80FF00",
-    imageSrc: "/assets/objects/chocolate.png",
-    imageClass: "w-20 h-auto absolute top-0 right-0",
-    visible: true,
-  },
-  {
-    time: "11 AM",
-    visible: true,
-  },
-  {
-    time: "12 PM",
-    visible: true,
-  },
-  {
-    time: "01 PM",
-    description: "CTF (Slot 2)/ RC Zone (Slot 2)",
-    bgColor: "#80FF00",
-    imageSrc: "/assets/objects/chemical.png",
-    imageClass: "w-8 h-auto absolute bottom-2 left-0",
-    visible: true,
-  },
-  {
-    time: "02 PM",
-    visible: true,
-  },
-  {
-    time: "03 PM",
-    visible: true,
-  },
-  {
-    time: "04 PM",
-    title: "Hackathon Submissions",
-    bgColor: "#80FF00",
-    imageSrc: "/assets/objects/chocolate.png",
-    imageClass: "w-20 h-auto absolute top-0 right-1",
-    visible: true,
-  },
-  {
-    time: "05 PM",
-    visible: true,
-  },
-  {
-    time: "06 PM",
-    title: "Halloween Party",
-    bgColor: "#80FF00",
-    imageSrc: "/assets/objects/balloons.png",
-    imageClass: "w-16 h-auto absolute bottom-2 right-1",
-    visible: true,
-  },
-  {
-    time: "07 PM",
-    visible: true,
-  },
-  {
-    time: "08 PM",
-    visible: true,
-  },
-  {
-    time: "09 PM",
-    title: "Hacktober Ends",
-    bgColor: "#FF7426",
-    imageSrc: "/assets/objects/bat-head.png",
-    imageClass: "w-20 h-auto absolute top-0 right-0",
-    visible: true,
-  },
-];
-
-const ScheduleSection: React.FC = () => {
-  const [firstItem, ...gridItems] = scheduleData;
+  const cardStyle = colorStyles[color]?.[variant] || colorStyles.orange.filled;
+  const diagonalColor = colorStyles[color]?.diagonalFill;
 
   return (
-    <section className="relative bg-[#19021D] min-h-screen w-full px-4 py-20 overflow-hidden">
-
+    <div className="relative">
       <div
-        className="flex w-full justify-center md:justify-between"
+        className={`p-6 rounded-l ${cardStyle} min-h-[200px] flex flex-col justify-between transition-all hover:scale-105 relative overflow-visible`}
+        style={{
+          clipPath: 'polygon(0 0, calc(100% - 40px) 0, 100% 40px, 100% 100%, 0 100%)'
+        }}
       >
-        <div
-          className="w-0 md:w-[15%]"
-        />
-        <div
-          className="w-full flex-shrink-0"
-        >
-          {/* Title */}
-          <h2 className="text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10">
-            EVENT DETAILS
-          </h2>
+        {/* Diagonal fill for outline cards */}
+        {variant === "outline" && (
+          <div
+            className={`absolute top-0 right-0 ${diagonalColor}`}
+            style={{
+              clipPath: 'polygon(0 0, 100% 0, 100% 100%)',
+              width: '43px',
+              height: '43px',
+              transform: 'translate(2px, -2px)'
+            }}
+          />
+        )}
 
-          {/* Main Schedule Layout */}
-          <div className="w-[90%] max-w-[1500px] mx-auto flex flex-col md:flex-row items-center gap-6 md:gap-0 md:items-start justify-between">
-            {/* Left: 09 AM */}
-            <div className="flex-shrink-0 max-w-6xl">
-              <div
-                className="relative rounded-xl p-6 w-[160px] h-[190px] md:p-3 md:w-[150px] md:h-[180px] text-center flex flex-col justify-center items-center"
-                style={{ backgroundColor: firstItem.bgColor }}
-              >
-                <div className="text-black text-xl md:text-2xl font-extrabold mb-2">
-                  {firstItem.time}
-                </div>
-                {firstItem.title && (
-                  <div className="text-white font-bold text-sm md:text-base leading-snug">
-                    {firstItem.title}
-                  </div>
-                )}
-                {firstItem.imageSrc && (
-                  <Image
-                    src={firstItem.imageSrc}
-                    width={300}
-                    height={300}
-                    alt=""
-                    className={firstItem.imageClass}
-                  />
-                )}
-              </div>
-            </div>
-
-            {/* Right: Grid of remaining times */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl">
-              {gridItems.map((item, index) => {
-                const backgroundColor = item.bgColor || "#421C55";
-
-                if (!item.visible) {
-                  return (
-                    <div
-                      key={index}
-                      className="relative rounded-xl p-4 w-[160px] h-[190px] md:p-3 md:w-[150px] md:h-[180px] text-center flex flex-col justify-center items-center bg-transparent"
-                    />
-                  )
-                }
-
-                return (
-                  <div
-                    key={index}
-                    className="relative rounded-xl p-4 w-[160px] h-[190px] md:p-3 md:w-[150px] md:h-[180px] text-center flex flex-col justify-center items-center z-10"
-                    style={{ backgroundColor }}
-                  >
-                    <div className="text-black text-xl md:text-2xl font-extrabold mb-2">
-                      {item.time}
-                    </div>
-                    {item.title && (
-                      <div className="text-black font-bold text-sm md:text-base leading-snug">
-                        {item.title}
-                      </div>
-                    )}
-                    {item.title && item.description && (
-                      <div className="w-20 h-[1px] bg-black/50 my-2" />
-                    )}
-                    {item.description && (
-                      <div className="text-black text-xs md:text-sm">
-                        {item.description}
-                      </div>
-                    )}
-                    {item.imageSrc && (
-                      <Image
-                        src={item.imageSrc}
-                        width={300}
-                        height={300}
-                        alt=""
-                        className={item.imageClass || ""}
-                      />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
+        <p className="text-sm font-medium opacity-80 relative z-10">{time}</p>
+        {/* Added whitespace-pre-line here */}
+        <h2 className="text-2xl font-bold relative z-10 whitespace-pre-line">{title}</h2>
       </div>
-
-
-
-      <Image
-        src={"/assets/objects/spider.png"}
-        width={300}
-        height={300}
-        alt=""
-        className="absolute bottom-1 md:bottom-[2vw] right-[10vw] w-20 h-auto z-10"
-      />
-
-      {/* Web Decoration */}
-      <Image
-        src={"/assets/schedule-item-1.svg"}
-        width={300}
-        height={300}
-        alt=""
-        className="absolute top-0 left-0 w-[400px] md:w-[600px] h-auto"
-      />
-
-      {/* Ground Decoration */}
-      <Image
-        src={"/assets/schedule-item-2.svg"}
-        width={800}
-        height={200}
-        alt="ground"
-        className="w-full absolute bottom-0 left-0"
-      />
-      <Image
-        src={"/assets/schedule-item-3.svg"}
-        width={800}
-        height={200}
-        alt="ground"
-        className="w-full absolute bottom-0 right-0"
-      />
-    </section>
+    </div>
   );
 };
 
-export default ScheduleSection;
+export default function EventSchedule() {
+  const schedule = [
+    { time: "09:00 AM - 10:00 AM", title: "Inauguration\n Ceremony", variant: "filled", color: "orange" },
+    { time: "10:00 AM Onwards", title: "Hackathon\n Kick Off", variant: "outline", color: "lime" },
+    { time: "10:00 AM - 11:00 PM", title: "CTF/RC Zone/\n Designathon", variant: "outline", color: "orange" },
+    { time: "10:00 AM - 4:00 PM", title: "Start Up/\n Tech Expo", variant: "outline", color: "lime" },
+    { time: "10:30 AM - 12:00 PM", title: "Talk\n Session", variant: "outline", color: "orange" },
+    { time: "12:00 PM - 4:00 PM", title: "Under 25", variant: "filled", color: "lime" },
+    { time: "1:00 PM - 2:00 PM", title: "CTF/RC Zone/\nDesignation", variant: "filled", color: "orange" },
+    { time: "4:00 PM - 5:00 PM", title: "Hackathon\nSubmissions", variant: "filled", color: "lime" },
+    { time: "6:00 PM - 9:00 PM", title: "Halloween\n Party", variant: "outline", color: "orange" },
+  ];
+
+  return (
+    <main className="min-h-screen bg-[#0D000F] text-white flex flex-col items-center py-12 px-6">
+      {/* Title */}
+      <h1 className="text-5xl md:text-7xl font-black text-lime-400 mb-8 text-center tracking-widest">
+        EVENT SCHEDULE
+      </h1>
+
+      {/* Header Info */}
+<div className="relative mb-10 max-w-6xl">
+  {/* Outer wrapper preserves the rounded corners */}
+  <div className="rounded-lg overflow-hidden">
+    {/* Inner clipped layer keeps the diagonal */}
+    <div
+      className="flex flex-wrap gap-4 items-center justify-center text-sm md:text-base bg-orange-500 text-black px-6 py-3 font-semibold"
+      style={{
+        clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)'
+      }}
+    >
+      <div className="flex items-center gap-2 relative z-10">
+        <Calendar className="w-5 h-5" />
+        <span>25th October 2025</span>
+      </div>
+      <div className="flex items-center gap-2 relative z-10">
+        <MapPin className="w-5 h-5" />
+        <span>Travancore International Convention Centre</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      {/* Schedule Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
+        {schedule.map((item, idx) => (
+          <EventCard
+            key={idx}
+            time={item.time}
+            title={item.title}
+            variant={item.variant}
+            color={item.color}
+          />
+        ))}
+      </div>
+    </main>
+  );
+}
