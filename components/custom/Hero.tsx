@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
 
       {!isMobile ? (
         <div
-          className="flex w-full items-center justify-between px-[4vw] md:px-[7vw] lg:px-[10vw] mb-[3vw] absolute bottom-0"
+          className="flex w-full items-center justify-between px-[4vw] md:px-[7vw] lg:px-[10vw] mb-[2.5vw] absolute bottom-0"
         >
           <div
             className="flex flex-col items-center"
@@ -43,14 +43,57 @@ const HeroSection: React.FC = () => {
             </div>
           </div>
 
-          {/* Mansion */}
-          <Image
-            src={"/assets/hero-item-1.png"}
-            width={800}
-            height={800}
-            alt="Item 1"
-            className="md:w-[45vw] lg:w-[40vw] xl:w-[33vw] max-w-[500px] h-auto z-10"
-          />
+          <div
+            className="relative z-10 md:w-[45vw] lg:w-[40vw] xl:w-[33vw] max-w-[500px] h-auto"
+          >
+            {/* Mansion */}
+            <Image
+              src={"/assets/hero-item-1.png"}
+              width={800}
+              height={800}
+              alt="Item 1"
+              className="w-full"
+            />
+
+            {/* Ghosts */}
+            <Image
+              src={"/assets/hero-item-4.svg"}
+              width={300}
+              height={300}
+              alt="Ghost"
+              className="absolute w-24 bottom-20 left-0 animate-alive-item -z-10"
+            />
+            <Image
+              src={"/assets/hero-item-5.svg"}
+              width={300}
+              height={300}
+              alt="Ghost"
+              className="absolute w-24 top-1/2 right-2/12 animate-alive-item"
+            />
+            <Image
+              src={"/assets/hero-item-6.svg"}
+              width={300}
+              height={300}
+              alt="Ghost"
+              className="absolute w-24 top-2/6 left-16 animate-alive-item -z-10"
+            />
+
+            {/* Bats */}
+            <Image
+              src={"/assets/hero-item-7.svg"}
+              width={300}
+              height={300}
+              alt="Bat"
+              className="absolute w-24 -right-20 top-1/2 animate-alive-item"
+            />
+            <Image
+              src={"/assets/hero-item-8.svg"}
+              width={300}
+              height={300}
+              alt="Bat"
+              className="absolute w-24 left-20 top-10 animate-alive-item"
+            />
+          </div>
         </div>
       ) : (
         <div className="flex flex-col w-full items-center justify-center mt-[200px] gap-3">
@@ -79,6 +122,13 @@ const HeroSection: React.FC = () => {
         </div>
       )}
 
+      <Image
+        src={"/assets/hero-item-9.svg"}
+        width={300}
+        height={300}
+        alt="Bat"
+        className="absolute w-24 bottom-10 left-0 animate-alive-item z-10"
+      />
       <Image
         src={"/assets/hero-item-2.svg"}
         width={800}
