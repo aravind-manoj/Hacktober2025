@@ -46,11 +46,7 @@ const HacktoberFaqPage: React.FC = () => {
 
     return (
         <div 
-            className="min-h-screen p-8 bg-cover bg-center bg-no-repeat"
-            style={{ 
-                backgroundImage: `url(${background ? background.src : '/purple-bg.png'})`,
-                backgroundColor: '#4c1d95',
-            }}
+            className="bg-[#28022E] min-h-screen p-8 bg-cover bg-center bg-no-repeat"
         >
             <div className="max-w-4xl mx-auto">
                 <div className="flex justify-end mb-6">
