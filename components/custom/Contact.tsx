@@ -41,11 +41,7 @@ const mapIframeHtml = `<div style="width: 100%"><iframe width="720" height="600"
 const ContactPage: React.FC = () => {
   return (
     <div 
-      className="min-h-screen p-8"
-      style={{ 
-        backgroundImage: `url(${background ? background.src : '/purple-bg.png'})`,
-        backgroundColor: '#4c1d95',
-      }}
+      className="min-h-screen p-8 bg-[#34043C]"
     >
       <div className="max-w-6xl mx-auto">
         

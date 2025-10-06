@@ -9,12 +9,12 @@ const HeroSection: React.FC = () => {
   const isMobile = useIsMobile();
 
   return (
-    <section className="bg-[url('/assets/hero-bg.png')] bg-contain w-full h-screen relative overflow-hidden max-h-[900px]">
+    <section className="bg-[url('/assets/hero-bg.png')] bg-contain w-full h-screen md:h-[700px] lg:h-[750px] xl:h-screen relative overflow-hidden max-h-[900px]">
       <Header />
 
       {!isMobile ? (
         <div
-          className="flex w-full items-center justify-between px-[4vw] md:px-[7vw] lg:px-[10vw] mb-[5vh] absolute bottom-0"
+          className="flex w-full items-center justify-between px-[4vw] md:px-[7vw] lg:px-[10vw] mb-[3vw] lg:mb-[4vw] xl:mb-[5vw] absolute bottom-0"
         >
           <div
             className="flex flex-col items-center"
@@ -25,7 +25,7 @@ const HeroSection: React.FC = () => {
               width={800}
               height={400}
               alt="Main title"
-              className="md:w-[50vw] lg:w-[55vw] xl:w-[50vw] max-w-[500px] h-auto"
+              className="md:w-[45vw] lg:w-[45vw] xl:w-[50vw] max-w-[500px] h-auto"
             />
 
             {/* Subtitle */}
@@ -35,11 +35,11 @@ const HeroSection: React.FC = () => {
 
             {/* Action buttons */}
             <div className="flex py-5 gap-4">
-              <Button className="px-4 py-4 sm:px-6 sm:py-4 md:px-8 md:py-5 rounded-full border-4 border-orange-500 bg-transparent text-orange-500 font-bold text-lg hover:bg-orange-500 hover:text-white hover:border-orange-500 hover:scale-105 hover:shadow-lg active:scale-95 transition-all duration-300 ease-in-out cursor-pointer">
+              <Button className="px-4 py-4 md:px-6 md:py-4 lg:px-8 lg:py-5 rounded-full border-4 border-orange-500 bg-transparent text-orange-500 font-bold text-lg hover:bg-orange-500 hover:text-white hover:border-orange-500 hover:scale-105 hover:shadow-lg active:scale-95 transition-all duration-300 ease-in-out cursor-pointer">
                 More Info
               </Button>
 
-              <CustomButton text="Join Event" variant="light" className="pl-4 pr-1 py-5 sm:pl-4 sm:pr-1 sm:py-5 md:pl-5 md:pr-2 md:py-6" />
+              <CustomButton text="Join Event" variant="light" className="pl-4 pr-1 py-5 md:pl-4 md:pr-1 md:py-5 lg:pl-5 lg:pr-2 lg:py-6" />
             </div>
           </div>
 
