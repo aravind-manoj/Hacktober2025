@@ -1,6 +1,7 @@
 import HeroSection from '@/components/custom/Hero';
 import AboutSection from '@/components/custom/About';
 import ScheduleSection from '@/components/custom/Schedule';
+import Tickets from '@/components/custom/Tickets';
 import FAQSection from '@/components/custom/FAQ';
 import SponsorsSection from "@/components/custom/Sponsor";
 import ContactSection from "@/components/custom/Contact";
@@ -12,6 +13,7 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ScheduleSection />
+      <Tickets/>
       <FAQSection />
       <SponsorsSection />
       <ContactSection />
