@@ -56,15 +56,13 @@ const Header: React.FC = () => {
         </button>
       </header>
       <div
-        className={`fixed inset-0 bg-black/50 z-[99] md:hidden transition-opacity duration-300 ${
-          menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        className={`fixed inset-0 bg-black/50 z-[99] md:hidden transition-opacity duration-300 ${menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setMenuOpen(false)}
       />
       <div
-        className={`fixed bottom-0 left-0 right-0 bg-[#0D0D0D]/85 backdrop-blur-lg flex flex-col items-center gap-6 py-8 rounded-t-3xl border-t border-[#222] md:hidden z-[100] transition-transform duration-300 ease-out ${
-          menuOpen ? "translate-y-0" : "translate-y-full"
-        }`}
+        className={`fixed bottom-0 left-0 right-0 bg-[#0D0D0D]/85 backdrop-blur-lg flex flex-col items-center gap-6 py-8 rounded-t-[80px] border-t border-[#222] md:hidden z-[100] transition-transform duration-300 ease-out ${menuOpen ? "translate-y-0" : "translate-y-full"
+          }`}
       >
         <Link
           href="#about"
@@ -97,7 +95,7 @@ const Header: React.FC = () => {
         <CustomButton
           text="Join Event"
           variant="dark"
-          className="px-8 py-8"
+          className="pl-6 pr-2 py-7"
         />
       </div>
     </>
