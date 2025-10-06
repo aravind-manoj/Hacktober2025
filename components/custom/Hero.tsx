@@ -14,7 +14,7 @@ const HeroSection: React.FC = () => {
 
       {!isMobile ? (
         <div
-          className="flex w-full items-center justify-between px-[4vw] md:px-[7vw] lg:px-[10vw] mb-[2.5vw] absolute bottom-0"
+          className="flex w-full items-center justify-between px-[4vw] md:px-[7vw] lg:px-[10vw] mb-[5vh] absolute bottom-0"
         >
           <div
             className="flex flex-col items-center"
@@ -61,21 +61,21 @@ const HeroSection: React.FC = () => {
               width={300}
               height={300}
               alt="Ghost"
-              className="absolute w-24 bottom-20 left-0 animate-alive-item -z-10"
+              className="absolute w-[8vw] max-w-32 bottom-20 -left-6 animate-alive-motion-1 -z-10"
             />
             <Image
               src={"/assets/hero-item-5.svg"}
               width={300}
               height={300}
               alt="Ghost"
-              className="absolute w-24 top-1/2 right-2/12 animate-alive-item"
+              className="absolute w-[8vw] max-w-32 top-1/2 right-2/12 animate-alive-motion-2"
             />
             <Image
               src={"/assets/hero-item-6.svg"}
               width={300}
               height={300}
               alt="Ghost"
-              className="absolute w-24 top-2/6 left-16 animate-alive-item -z-10"
+              className="absolute w-[5vw] max-w-24 top-2/6 left-14 animate-alive-motion-3 -z-10"
             />
 
             {/* Bats */}
@@ -84,14 +84,14 @@ const HeroSection: React.FC = () => {
               width={300}
               height={300}
               alt="Bat"
-              className="absolute w-24 -right-20 top-1/2 animate-alive-item"
+              className="absolute w-[8vw] max-w-32 -right-[5vw] top-1/2 animate-alive-motion-1"
             />
             <Image
               src={"/assets/hero-item-8.svg"}
               width={300}
               height={300}
               alt="Bat"
-              className="absolute w-24 left-20 top-10 animate-alive-item"
+              className="absolute w-[8vw] max-w-32 left-20 top-10 animate-alive-motion-2"
             />
           </div>
         </div>
@@ -127,7 +127,7 @@ const HeroSection: React.FC = () => {
         width={300}
         height={300}
         alt="Bat"
-        className="absolute w-24 bottom-10 left-0 animate-alive-item z-10"
+        className="absolute w-0 md:w-[8vw] max-w-32 bottom-10 left-0 animate-alive-motion-3 z-10"
       />
       <Image
         src={"/assets/hero-item-2.svg"}
