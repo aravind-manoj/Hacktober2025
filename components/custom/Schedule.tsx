@@ -1,5 +1,11 @@
 import React from "react";
 import { Calendar, MapPin } from "lucide-react";
+import localFont from "next/font/local";
+import Image from "next/image";
+
+const infiniteBeyond = localFont({
+  src: "../../app/fonts/infinite_beyond.ttf"
+});
 
 const EventCard = ({ time, title, variant = "filled", color = "orange" }) => {
   const colorStyles = {
@@ -61,38 +67,46 @@ export default function EventSchedule() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0D000F] text-white flex flex-col items-center py-12 px-6">
+    <main className="min-h-screen bg-[#0D000F] text-white flex flex-col items-center py-12 px-6 relative pb-[200px]">
       {/* Title */}
-      <h1 className="text-5xl md:text-7xl font-black text-lime-400 mb-8 text-center tracking-widest">
+      <h1 className={`text-5xl md:text-7xl z-10 font-black text-lime-400 mb-8 text-center tracking-widest ${infiniteBeyond.className}`}>
         EVENT SCHEDULE
       </h1>
 
       {/* Header Info */}
-<div className="relative mb-10 max-w-6xl">
-  {/* Outer wrapper preserves the rounded corners */}
-  <div className="rounded-lg overflow-hidden">
-    {/* Inner clipped layer keeps the diagonal */}
-    <div
-      className="flex flex-wrap gap-4 items-center justify-center text-sm md:text-base bg-orange-500 text-black px-6 py-3 font-semibold"
-      style={{
-        clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)'
-      }}
-    >
-      <div className="flex items-center gap-2 relative z-10">
-        <Calendar className="w-5 h-5" />
-        <span>25th October 2025</span>
+      <div className="relative mb-10 max-w-6xl z-10">
+        {/* Outer wrapper preserves the rounded corners */}
+        <div className="rounded-lg overflow-hidden">
+          {/* Inner clipped layer keeps the diagonal */}
+          <div
+            className="flex flex-wrap gap-4 items-center justify-center text-sm md:text-base bg-orange-500 text-black px-6 py-3 font-semibold"
+            style={{
+              clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)'
+            }}
+          >
+            <div className="flex items-center gap-2 relative z-10">
+              <Calendar className="w-5 h-5" />
+              <span>25th October 2025</span>
+            </div>
+            <div className="flex items-center gap-2 relative z-10">
+              <MapPin className="w-5 h-5" />
+              <span>Travancore International Convention Centre</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="flex items-center gap-2 relative z-10">
-        <MapPin className="w-5 h-5" />
-        <span>Travancore International Convention Centre</span>
-      </div>
-    </div>
-  </div>
-</div>
+
+      {/* Dark clouds scattered widely */}
+      <img src="/assets/dark_cloud.svg" className="absolute z-0 top-10 left-4" />
+      <img src="/assets/dark_cloud.svg" className="absolute z-0 top-20 right-8" />
+      <img src="/assets/dark_cloud.svg" className="absolute z-0 top-1/3 left-1/4" />
+      <img src="/assets/dark_cloud.svg" className="absolute z-0 top-2/3 right-1/4" />
+      <img src="/assets/dark_cloud.svg" className="absolute z-0 bottom-32 left-8" />
+      <img src="/assets/dark_cloud.svg" className="absolute z-0 bottom-20 right-12" />
 
 
       {/* Schedule Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl w-full z-10">
         {schedule.map((item, idx) => (
           <EventCard
             key={idx}
@@ -103,6 +117,21 @@ export default function EventSchedule() {
           />
         ))}
       </div>
+
+      <Image
+        src={"/assets/hero-item-2.svg"}
+        width={800}
+        height={200}
+        alt="ground"
+        className="w-full absolute bottom-0 left-0"
+      />
+      <Image
+        src={"/assets/hero-item-3.svg"}
+        width={800}
+        height={200}
+        alt="ground"
+        className="w-full absolute bottom-0 right-0"
+      />
     </main>
   );
 }
