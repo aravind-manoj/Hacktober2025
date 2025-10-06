@@ -32,9 +32,9 @@ const AboutSection: React.FC = () => {
   const isMobile = useIsMobile();
 
   return (
-    <section id="about" className="relative bg-[#2B0032] min-h-screen w-full overflow-hidden gap-4 flex flex-col text-white">
+    <section id="about" className="relative bg-[#2B0032] min-h-screen w-full overflow-hidden gap-4 flex flex-col text-white md:pb-40">
       <div className=' px-4 pt-20 flex flex-col md:flex-row gap-4'>
-        <div className='flex flex-col gap-4 md:min-w-[700px]'>
+        <div className='flex flex-col gap-4 md:min-w-[50%]'>
           <h1 className={`${infiniteBeyond.className} text-3xl md:text-5xl/normal text-[#62FF00] text-center`}>What's BREWING AT hacktober ?</h1>
           <p className='text-center'>How a wild idea became Kerala’s first Halloween-themed tech fest</p>
           <CustomButton text="Join Event" variant="light" className="pl-4 pr-1 py-5 sm:pl-4 sm:pr-1 sm:py-5 md:pl-5 md:pr-2 md:py-6 mx-auto" />
@@ -75,7 +75,8 @@ const AboutSection: React.FC = () => {
           </AboutCard>
         </div>
       </div>
-      <img src="/assets/black_bump.svg" className='w-full' />
+      <img src="/assets/black_bump.svg" className='w-full md:hidden' />
+      <Image src="/assets/desktop_black_bump.png" width={2000} height={200} alt="Spooky footer" className='hidden md:block absolute bottom-0 w-full'/>
     </section>
   );
 };
