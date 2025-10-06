@@ -5,9 +5,13 @@
 import FaqItem from '@/components/buildup/FaqItem';
 import React, { useState } from 'react';
 import Image from 'next/image'; 
+import localFont from "next/font/local";
 import background from "@/public/assets/faq-bg.png"; 
 import pumpkinImage from "@/public/assets/xelly_logo_3 2.png"; 
 
+const infiniteBeyond = localFont({
+  src: "../../app/fonts/infinite_beyond.ttf"
+});
 
 interface FaqData {
   question: string;
@@ -49,8 +53,8 @@ const HacktoberFaqPage: React.FC = () => {
             }}
         >
             <div className="max-w-4xl mx-auto">
-                <div className="flex justify-end">
-                    <h1 className="text-6xl font-extrabold text-orange-600 tracking-wider mb-10 [text-shadow:_3px_3px_5px_rgb(0_0_0_/_0.5)]">
+                <div className="flex justify-end mb-6">
+                    <h1 className={`text-6xl font-extrabold text-orange-600 ${infiniteBeyond.className}`}>
                         FAQ'S
                     </h1>
                 </div>
