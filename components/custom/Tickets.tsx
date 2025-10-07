@@ -1,6 +1,7 @@
 "use client";
 import localFont from "next/font/local";
 import Image from "next/image";
+import Link from "next/link";
 
 const infiniteBeyond = localFont({
   src: "../../app/fonts/infinite_beyond.ttf"
@@ -15,11 +16,12 @@ interface TicketCardProps {
   price: string;
   perks: string[];
   isSpecial?: boolean;
+  url: string;
 }
 
-function TicketCard({ heading, price, perks, isSpecial = false }: TicketCardProps) {
+function TicketCard({ heading, price, perks, isSpecial = false, url }: TicketCardProps) {
   return (
-    <div className="flex rounded-md bg-black p-3 h-[450px] w-[320px] m-2 z-10">
+    <Link href={url} className="flex rounded-md bg-black p-3 h-[450px] w-[320px] m-2 z-10">
       <div className={`rounded-tr-[100px] rounded-bl-[100px] ${isSpecial ? 'bg-gradient-to-br from-[#FF6B35] to-[#F7931E]' : 'bg-[#62FF00]'} flex-1 w-full border-8 ${isSpecial ? 'border-[#FF4500]' : 'border-[#69D228]'} p-6 flex flex-col justify-center items-center`}>
         <div className="text-center mb-6">
           <h2 className={`${hanuman.className} text-xl text-[#2B0032] mb-3`}>
@@ -43,7 +45,7 @@ function TicketCard({ heading, price, perks, isSpecial = false }: TicketCardProp
           </ul>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }
 
@@ -60,7 +62,8 @@ export default function Tickets() {
         "Opening Ceremony",
         "Expert Talk Sessions",
         "Under25 Special Events"
-      ]
+      ],
+      url: "https://makemypass.com/event/hacktober-2025?ticket_id=c334896c-1631-4d4f-a776-071142b17a86"
     },
     {
       heading: "REGULAR + HALLOWEEN",
@@ -70,7 +73,8 @@ export default function Tickets() {
         "Exclusive Halloween Party Entry",
         "Costume Contest Participation",
         "Special Halloween Activities"
-      ]
+      ],
+      url: "https://makemypass.com/event/hacktober-2025?ticket_id=cc23d2c9-c700-4248-93f4-7ab1eec1e73c"
     },
     {
       heading: "REGULAR + COMMUNITY",
@@ -80,7 +84,8 @@ export default function Tickets() {
         "Hackathon Competition Entry",
         "Designathon Challenge Access",
         "CTF & RC Zone Activities"
-      ]
+      ],
+      url: "https://makemypass.com/event/hacktober-2025?ticket_id=faaea7f8-016c-4e86-8fa2-599fc68caf51"
     },
     {
       heading: "HALLOWEEN ONLY",
@@ -91,7 +96,8 @@ export default function Tickets() {
         "Costume Contest Entry",
         "Special Halloween Treats"
       ],
-      isSpecial: true
+      isSpecial: true,
+      url: "https://makemypass.com/event/hacktober-2025?ticket_id=323fb8e1-9b0d-4d26-bb64-b74ae4d7aa86"
     },
     {
       heading: "FULL ACCESS PASS",
@@ -103,7 +109,8 @@ export default function Tickets() {
         "Community Events Entry",
         "Best Value Package!"
       ],
-      isSpecial: true
+      isSpecial: true,
+      url: "https://makemypass.com/event/hacktober-2025?ticket_id=062f4350-2590-418a-be61-cf2a5861a90a"
     },
     {
       heading: "ENTHUSIASTS",
@@ -115,7 +122,8 @@ export default function Tickets() {
         "Networking Opportunities",
         "VIP Experience"
       ],
-      isSpecial: true
+      isSpecial: true,
+      url: "https://makemypass.com/event/hacktober-2025?ticket_id=0c3ad450-0923-43a5-9864-0573e7e26b43"
     }
   ];
 
@@ -134,6 +142,7 @@ export default function Tickets() {
               price={ticket.price}
               perks={ticket.perks}
               isSpecial={ticket.isSpecial}
+              url={ticket.url}
             />
           ))}
         </div>
