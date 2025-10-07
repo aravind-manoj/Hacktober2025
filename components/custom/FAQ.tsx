@@ -58,7 +58,7 @@ const HacktoberFaqPage: React.FC = () => {
         >
             <div className="max-w-4xl mx-auto">
                 <div className="flex justify-end mb-6">
-                    <h1 className={`text-6xl font-extrabold text-orange-600 ${infiniteBeyond.className}`}>
+                    <h1 className={`text-6xl text-orange-600 ${infiniteBeyond.className}`}>
                         FAQ'S
                     </h1>
                 </div>

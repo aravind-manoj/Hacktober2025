@@ -51,7 +51,7 @@ const SponsorsSection: React.FC = () => {
         className="flex flex-col w-full justify-center py-10"
       >
         {/* Partners Title */}
-        <h1 className={`text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10 ${infiniteBeyond.className}`}>
+        <h1 className={`text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl text-center mb-20 z-10 ${infiniteBeyond.className}`}>
           OUR PARTNERS
         </h1>
 
@@ -75,7 +75,7 @@ const SponsorsSection: React.FC = () => {
         className="flex flex-col w-full justify-center py-10"
       >
         {/* Sponsors Title */}
-        <h2 className={`text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10 ${infiniteBeyond.className}`}>
+        <h2 className={`text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xltext-center mb-20 z-10 ${infiniteBeyond.className}`}>
           SPONSORS
         </h2>
 
