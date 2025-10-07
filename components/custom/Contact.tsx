@@ -9,7 +9,6 @@ import ContactCard from '@/components/buildup/ContactCard';
 // Assuming paths for your resources
 import background from "@/public/assets/faq-bg.png"; // Main body background
 
-
 // --- Contact Data (remains the same and accessible) ---
 const primaryContact = {
   name: 'Tomson J Finosh',
@@ -34,7 +33,7 @@ const alternateContacts = [
 
 
 // --- NEW: Map Embed HTML ---
-const mapIframeHtml = `<div style="width: 100%"><iframe width="720" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=720&height=600&hl=en&q=PPHG+4GR,%20Bharananganam%20Pravithanam%20Road%20Kottayam,%20Palai,%20Choondacherry,%20Kerala%20686579+(St%20Joseph's%20College%20of%20Engineering%20and%20Technology)&t=&z=14&ie=UTF8&iwloc=B&output=embed"><a href="https://www.mapsdirections.info/it/calcola-la-popolazione-su-una-mappa/">mappa della popolazione Italia</a></iframe></div>`;
+const mapIframeHtml = `<div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Travancore International Convention Centre&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://embedgooglemap.xyz/">embed google map</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>`;
 // --- END Map Embed HTML ---
 
 
@@ -46,6 +45,7 @@ const ContactPage: React.FC = () => {
       <div className="max-w-6xl mx-auto">
         
         {/* --- CORRECTED: Main Header (CONTACT) --- */}
+      
         <div className="text-center mb-16">
           <h1 className="text-7xl font-extrabold text-orange-600 tracking-wider [text-shadow:_3px_3px_5px_rgb(0_0_0_/_0.5)]">
             CONTACT
