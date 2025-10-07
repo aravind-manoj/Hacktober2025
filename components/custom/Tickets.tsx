@@ -22,16 +22,16 @@ function TicketCard({ heading, price, perks, isSpecial = false }: TicketCardProp
     <div className="flex rounded-md bg-black p-3 h-[450px] w-[320px] m-2 z-10">
       <div className={`rounded-tr-[100px] rounded-bl-[100px] ${isSpecial ? 'bg-gradient-to-br from-[#FF6B35] to-[#F7931E]' : 'bg-[#62FF00]'} flex-1 w-full border-8 ${isSpecial ? 'border-[#FF4500]' : 'border-[#69D228]'} p-6 flex flex-col justify-center items-center`}>
         <div className="text-center mb-6">
-          <h2 className={`${hanuman.className} text-xl text-[#2B0032] font-bold mb-3`}>
+          <h2 className={`${hanuman.className} text-xl text-[#2B0032] mb-3`}>
             {heading}
           </h2>
-          <div className={`${infiniteBeyond.className} text-4xl text-[#2B0032] font-bold`}>
+          <div className={`${infiniteBeyond.className} text-4xl tracking-widest text-[#2B0032]`}>
             ₹{price}
           </div>
         </div>
 
         <div className="flex-1 flex flex-col justify-center w-full">
-          <h3 className={`${hanuman.className} text-lg text-[#2B0032] font-semibold mb-3 text-center`}>
+          <h3 className={`${hanuman.className} text-lg text-[#2B0032] mb-3 text-center`}>
             What's Included:
           </h3>
           <ul className="space-y-2 text-center">
