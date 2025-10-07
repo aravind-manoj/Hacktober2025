@@ -24,7 +24,7 @@ const FaqItem: React.FC<FaqItemProps> = ({ question, answer, onQuestionClick, is
     headerTextColor = 'text-white';
   } else {
     // DEFAULT STYLE: Deep purple background
-    headerBgColor = 'bg-purple-900';
+    headerBgColor = 'bg-[#460D50]';
     headerTextColor = 'text-gray-200';
   }
 
