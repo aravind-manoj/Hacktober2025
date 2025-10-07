@@ -1,4 +1,9 @@
 import Image from "next/image";
+import localFont from "next/font/local";
+
+const infiniteBeyond = localFont({
+  src: "../../app/fonts/infinite_beyond.ttf"
+});
 
 interface partnersItem {
   name: string;
@@ -46,9 +51,10 @@ const SponsorsSection: React.FC = () => {
         className="flex flex-col w-full justify-center py-10"
       >
         {/* Partners Title */}
-        <h1 className="text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10">
+        <h1 className={`text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10 ${infiniteBeyond.className}`}>
           OUR PARTNERS
         </h1>
+
 
         {/* Partners */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 items-center justify-items-center justify-center md:px-5 gap-6 md:gap-8 lg:gap-12 xl:gap-16 w-[90vw] max-w-[1500px] mx-auto">
@@ -69,7 +75,7 @@ const SponsorsSection: React.FC = () => {
         className="flex flex-col w-full justify-center py-10"
       >
         {/* Sponsors Title */}
-        <h2 className="text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10">
+        <h2 className={`text-[#62FF00] text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-center mb-20 z-10 ${infiniteBeyond.className}`}>
           SPONSORS
         </h2>
 

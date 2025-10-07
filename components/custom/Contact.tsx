@@ -4,10 +4,11 @@
 
 import React from 'react';
 import ContactCard from '@/components/buildup/ContactCard';
-// Removed unused Image import from this block
+import localFont from 'next/font/local';
 
-// Assuming paths for your resources
-import background from "@/public/assets/faq-bg.png"; // Main body background
+const infiniteBeyond = localFont({
+  src: "../../app/fonts/infinite_beyond.ttf"
+});
 
 // --- Contact Data (remains the same and accessible) ---
 const primaryContact = {
@@ -33,7 +34,7 @@ const alternateContacts = [
 
 
 // --- NEW: Map Embed HTML ---
-const mapIframeHtml = `<div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Travancore International Convention Centre&amp;t=&amp;z=17&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://embedgooglemap.xyz/">embed google map</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>`;
+const mapIframeHtml = `<div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Travancore International Convention Centre&t=&z=17&ie=UTF8&iwloc=B&output=embed"></iframe><a href="https://embedgooglemap.xyz/">embed google map</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>`;
 // --- END Map Embed HTML ---
 
 
@@ -44,21 +45,19 @@ const ContactPage: React.FC = () => {
     >
       <div className="max-w-6xl mx-auto">
         
-        {/* --- CORRECTED: Main Header (CONTACT) --- */}
-      
+        {/* --- Main Header (CONTACT) --- */}
         <div className="text-center mb-16">
-          <h1 className="text-7xl font-extrabold text-orange-600 tracking-wider [text-shadow:_3px_3px_5px_rgb(0_0_0_/_0.5)]">
+          <h1 className={`text-7xl font-extrabold text-orange-600 tracking-wider [text-shadow:_3px_3px_5px_rgb(0_0_0_/_0.5)] ${infiniteBeyond.className}`}>
             CONTACT
           </h1>
         </div>
-        {/* -------------------------------------- */}
-
+        
         {/* --- Top Section: Form and Map --- */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-10">
           
           {/* Left Column: Intro and Form */}
           <div className="text-white space-y-6">
-            <h2 className="text-4xl font-extrabold">
+            <h2 className="text-4xl font-extrabold ">
               Get in <span className="text-orange-600">Touch</span>
             </h2>
             <p className="text-lg text-gray-300 max-w-lg">
@@ -91,39 +90,42 @@ const ContactPage: React.FC = () => {
         <hr className="border-t border-purple-900 mb-8" /> 
 
 
-        {/* Contact Headings (Alignment Correction) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-4">
-            {/* Primary Organizer: Occupies 1 column, left-aligned like the card */}
-            <h3 className="text-3xl font-extrabold text-orange-600">{primaryContact.title}</h3>
-            
-            {/* Alternate Contacts: Occupies 2 columns, centered over those columns */}
-            <div className="col-span-2 text-center">
-                <h3 className="text-3xl font-extrabold text-orange-600">Alternate Contacts</h3>
-            </div>
-        </div>
-
-        {/* Contact Cards Grid (1/3, 1/3, 1/3 layout) */}
+        {/* --- Responsive Contact Cards Section --- */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           
-          {/* Card 1: Primary Organizer */}
-          <ContactCard
-            name={primaryContact.name}
-            email={primaryContact.email}
-            phone={primaryContact.phone}
-          />
+          {/* Primary Organizer Section */}
+          <div className="col-span-1 flex flex-col items-center md:items-start"> {/* Align text differently on small vs medium */}
+            <h3 className="text-3xl font-extrabold text-orange-600 mb-4 text-center md:text-left">
+                {primaryContact.title}
+            </h3>
+            <ContactCard
+              name={primaryContact.name}
+              email={primaryContact.email}
+              phone={primaryContact.phone}
+            />
+          </div>
 
-          {/* Card 2 & 3: Alternate Contacts */}
-          <ContactCard
-            name={alternateContacts[0].name}
-            email={alternateContacts[0].email}
-            phone={alternateContacts[0].phone}
-          />
-          <ContactCard
-            name={alternateContacts[1].name}
-            email={alternateContacts[1].email}
-            phone={alternateContacts[1].phone}
-          />
+          {/* Alternate Contacts Section (Spans two columns on md and up) */}
+          <div className="md:col-span-2 flex flex-col items-center md:items-start"> {/* Align text differently on small vs medium */}
+            <h3 className="text-3xl font-extrabold text-orange-600 mb-4 text-center md:text-left">
+                Alternate Contacts
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full"> {/* Inner grid for the two alternate cards */}
+                <ContactCard
+                  name={alternateContacts[0].name}
+                  email={alternateContacts[0].email}
+                  phone={alternateContacts[0].phone}
+                />
+                <ContactCard
+                  name={alternateContacts[1].name}
+                  email={alternateContacts[1].email}
+                  phone={alternateContacts[1].phone}
+                />
+            </div>
+          </div>
+
         </div>
+        {/* --- End Responsive Contact Cards Section --- */}
 
       </div>
     </div>
