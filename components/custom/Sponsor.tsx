@@ -46,7 +46,7 @@ const partnersData: partnersItem[] = [
 
 const SponsorsSection: React.FC = () => {
   return (
-    <section className="bg-[url('/assets/sponsor-bg.png')] bg-contain w-full h-screen relative overflow-hidden max-h-[1000px]">
+    <section id="sponsors" className="bg-[url('/assets/sponsor-bg.png')] bg-contain w-full h-screen relative overflow-hidden max-h-[1000px]">
       <div
         className="flex flex-col w-full justify-center py-10"
       >
