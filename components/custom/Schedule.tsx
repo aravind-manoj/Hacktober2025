@@ -54,7 +54,7 @@ const EventCard = ({ time, title, variant = "filled", color = "orange" }: {
 
         <p className="text-sm font-medium opacity-80 relative z-10">{time}</p>
         {/* Added whitespace-pre-line here */}
-        <h2 className="text-2xl font-bold relative z-10 whitespace-pre-line">{title}</h2>
+        <h2 className="text-2xl relative z-10 whitespace-pre-line">{title}</h2>
       </div>
     </div>
   );
@@ -86,7 +86,7 @@ export default function EventSchedule() {
         <div className="rounded-lg overflow-hidden">
           {/* Inner clipped layer keeps the diagonal */}
           <div
-            className="flex flex-wrap gap-4 items-center justify-center text-sm md:text-base bg-orange-500 text-black px-6 py-3 font-semibold"
+            className="flex flex-wrap gap-4 items-center justify-center text-sm md:text-base bg-orange-500 text-black px-6 py-3 "
             style={{
               clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)'
             }}
