@@ -41,6 +41,7 @@ const mapIframeHtml = `<div class="mapouter"><div class="gmap_canvas"><iframe cl
 const ContactPage: React.FC = () => {
   return (
     <div 
+      id="contact"
       className="min-h-screen p-8 bg-[#34043C]"
     >
       <div className="max-w-6xl mx-auto">

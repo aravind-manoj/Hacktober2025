@@ -74,7 +74,7 @@ export default function EventSchedule() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0D000F] text-white flex flex-col items-center py-12 px-6 relative pb-[200px]">
+    <main id="schedule" className="min-h-screen bg-[#0D000F] text-white flex flex-col items-center py-12 px-6 relative pb-[200px]">
       {/* Title */}
       <h1 className={`text-5xl md:text-7xl z-10 font-black text-lime-400 mb-8 text-center tracking-widest ${infiniteBeyond.className}`}>
         EVENT SCHEDULE
