@@ -47,7 +47,7 @@ const ContactPage: React.FC = () => {
         
         {/* --- Main Header (CONTACT) --- */}
         <div className="text-center mb-16">
-          <h1 className={`text-7xl font-extrabold text-orange-600 tracking-wider [text-shadow:_3px_3px_5px_rgb(0_0_0_/_0.5)] ${infiniteBeyond.className}`}>
+          <h1 className={`text-7xl font-extrabold text-orange-600 tracking-wider ${infiniteBeyond.className}`}>
             CONTACT
           </h1>
         </div>
