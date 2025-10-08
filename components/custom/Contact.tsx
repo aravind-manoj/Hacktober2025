@@ -20,7 +20,7 @@ export default function ContactPage() {
   // })
 
   return (
-    <div className="min-h-screen bg-[#34043C] text-white">
+    <div id="contact" className="min-h-screen bg-[#34043C] text-white">
       <div className="pt-12 pb-8">
         <h1 className={`text-5xl md:text-6xl lg:text-7xl font-bold text-center text-[#FF7620] tracking-[0.01em] ${Infinite.className}`}> 
           CONTACT
