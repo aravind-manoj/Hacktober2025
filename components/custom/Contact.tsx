@@ -1,136 +1,165 @@
-// pages/contact.tsx
+"use client"
+import type React from "react"
+// import { useState } from "react"
+import { Card } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Mail, Phone } from "lucide-react"
+import Local from "next/font/local";
+import { Montserrat } from 'next/font/google'
+const montserrat = Montserrat({ subsets: ['latin'] })
+const Infinite = Local({ src: "../../app/fonts/infinite_beyond.ttf" })
+const Hanuman = Local({ src: "../../app/fonts/hanuman.ttf" })
 
-"use client";
+export default function ContactPage() {
+  // const [formData, setFormData] = useState({
+  //   name: "",
+  //   email: "",
+  //   phone: "",
+  //   inquiry: "",
+  // })
 
-import React from 'react';
-import ContactCard from '@/components/buildup/ContactCard';
-import localFont from 'next/font/local';
-
-const infiniteBeyond = localFont({
-  src: "../../app/fonts/infinite_beyond.ttf"
-});
-
-// --- Contact Data (remains the same and accessible) ---
-const primaryContact = {
-  name: 'Tomson J Finosh',
-  title: 'Primary Organizer',
-  email: 'tjj5279@gmail.com',
-  phone: '9895329319',
-};
-
-const alternateContacts = [
-  {
-    name: 'Vaishnav A Nair',
-    email: 'vaishnavanair@gmail.com',
-    phone: '9400468722',
-  },
-  {
-    name: 'Tims Tittus',
-    email: 'timstittus1@gmail.com',
-    phone: '9946116910',
-  },
-];
-// --- End Contact Data ---
-
-
-// --- NEW: Map Embed HTML ---
-const mapIframeHtml = `<div class="mapouter"><div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&height=400&hl=en&q=Travancore International Convention Centre&t=&z=17&ie=UTF8&iwloc=B&output=embed"></iframe><a href="https://embedgooglemap.xyz/">embed google map</a></div><style>.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {height:400px!important;}</style></div>`;
-// --- END Map Embed HTML ---
-
-
-const ContactPage: React.FC = () => {
   return (
-    <div 
-      id="contact"
-      className="min-h-screen p-8 bg-[#34043C]"
-    >
-      <div className="max-w-6xl mx-auto">
-        
-        {/* --- Main Header (CONTACT) --- */}
-        <div className="text-center mb-16">
-          <h1 className={`text-7xl text-orange-600 tracking-wider ${infiniteBeyond.className}`}>
-            CONTACT
-          </h1>
-        </div>
-        
-        {/* --- Top Section: Form and Map --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-10">
-          
-          {/* Left Column: Intro and Form */}
-          <div className="text-white space-y-6">
-            <h2 className="text-4xl font-extrabold ">
-              Get in <span className="text-orange-600">Touch</span>
-            </h2>
-            <p className="text-lg text-gray-300 max-w-lg">
-              Reach out to the team behind the madness for questions, collabs or inquiries - we don't bite (much)
-            </p>
+    <div className="min-h-screen bg-[#34043C] text-white">
+      <div className="pt-12 pb-8">
+        <h1 className={`text-5xl md:text-6xl lg:text-7xl font-bold text-center text-[#FF7620] tracking-[0.05em] ${Infinite.className}`}> 
+          CONTACT
+        </h1>
+      </div>
 
-            <form className="space-y-4 max-w-md">
-              <input type="text" placeholder="Name *" className="w-full p-4 bg-purple-900/50 border-2 border-purple-900/50 rounded text-white focus:ring-orange-600 focus:border-orange-600 outline-none transition duration-200" required />
-              <input type="email" placeholder="Email" className="w-full p-4 bg-purple-900/50 border-2 border-purple-900/50 rounded text-white focus:ring-orange-600 focus:border-orange-600 outline-none transition duration-200" />
-              <input type="tel" placeholder="Phone number *" className="w-full p-4 bg-purple-900/50 border-2 border-purple-900/50 rounded text-white focus:ring-orange-600 focus:border-orange-600 outline-none transition duration-200" required />
-              <input type="text" placeholder="What is your inquiry" className="w-full p-4 bg-purple-900/50 border-2 border-purple-900/50 rounded text-white focus:ring-orange-600 focus:border-orange-600 outline-none transition duration-200" />
-              <button type="submit" className="w-full p-4 bg-orange-600 text-white font-bold text-xl rounded shadow-lg hover:bg-orange-700 transition duration-200">SEND</button>
+      <div className="container mx-auto px-4 border-0 py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16">
+          <div className="w-full h-full bg-transparent p-6 rounded-2xl relative overflow-hidden flex flex-col justify-between">
+            <div>
+              <h2 className={`text-4xl md:text-5xl text-white font-bold mb-4 ${Hanuman.className}`}>
+                Get in <span className="text-[#FF7620]">Touch</span>
+              </h2>
+              <p className={`text-base  md:text-lg text-gray-300 leading-relaxed mb-6 font-semibold ${montserrat.className}`}>
+                Reach out to the team behind the madness for questions,
+                <br />
+                collabs or inquiries - we don&apos;t bite (much)
+              </p>
+            </div>
+            <form className={`space-y-4 ${Hanuman.className} flex flex-col items-start`}>
+              <Input
+                type="text"
+                name="name"
+                placeholder="Name *"
+
+                required
+                className="w-full md:w-2/3 h-12 bg-transparent border-2 border-gray-400/50 text-white placeholder:text-[#B0B0B0] f transition-colors rounded-lg px-4 py-3"
+              />
+              <Input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="w-full md:w-2/3 h-12 bg-transparent border-2 border-gray-400/50 text-white placeholder:text-[#B0B0B0]  transition-colors rounded-lg px-4 py-3"
+              />
+              <Input
+                type="tel"
+                name="phone"
+                placeholder="Phone number *"
+                required
+                className="w-full md:w-2/3 h-12 bg-transparent border-2 border-gray-400/50 text-white placeholder:text-[#B0B0B0]  transition-colors rounded-lg px-4 py-3"
+              />
+              <Input
+                type="text"
+                name="inquiry"
+                placeholder="What is your inquiry"
+                className="w-full md:w-2/3 h-12 bg-transparent border-2 border-purple-400/50 text-white placeholder:text-[#B0B0B0] transition-colors rounded-lg px-4 py-3"
+              />
+              <Button
+                type="submit"
+                className="bg-[#FF7620] h-12 w-full md:w-2/3 hover:bg-[#FF8A40] text-white font-bold px-12 py-3 rounded-full text-base transition-all duration-300 hover:scale-105"
+              >
+                SEND
+              </Button>
             </form>
           </div>
 
-          {/* Right Column: Map Embed */}
-          <div className="bg-white rounded-xl shadow-2xl overflow-hidden p-4">
-            <div 
-              className="w-full h-full min-h-[400px] relative"
-              dangerouslySetInnerHTML={{ __html: mapIframeHtml }}
+          <div className="w-full h-[400px] lg:h-full min-h-[350px] bg-gray-200 rounded-lg overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.4622776506726!2d76.72351987585408!3d9.72685197767355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07cc024cb7c83f%3A0xc8944aaebb3ba492!2sSt.%20Joseph&#39;s%20College%20of%20Engineering%20and%20Technology%2C%20Palai%20(Autonomous)!5e0!3m2!1sen!2sin!4v1759766590920!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Location Map"
             />
           </div>
         </div>
 
-        {/* --- Separator and Contact Cards --- */}
-        
-        <p className="text-white text-center text-2xl font-semibold my-8">
-            or
-        </p>
-        <hr className="border-t border-purple-900 mb-8" /> 
-
-
-        {/* --- Responsive Contact Cards Section --- */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          
-          {/* Primary Organizer Section */}
-          <div className="col-span-1 flex flex-col items-center md:items-start"> {/* Align text differently on small vs medium */}
-            <h3 className="text-3xl font-extrabold text-orange-600 mb-4 text-center md:text-left">
-                {primaryContact.title}
-            </h3>
-            <ContactCard
-              name={primaryContact.name}
-              email={primaryContact.email}
-              phone={primaryContact.phone}
-            />
+        <div className="relative flex items-center justify-center my-16">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t-2 border-dotted border-purple-400/40" />
           </div>
-
-          {/* Alternate Contacts Section (Spans two columns on md and up) */}
-          <div className="md:col-span-2 flex flex-col items-center md:items-start"> {/* Align text differently on small vs medium */}
-            <h3 className="text-3xl font-extrabold text-orange-600 mb-4 text-center md:text-left">
-                Alternate Contacts
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full"> {/* Inner grid for the two alternate cards */}
-                <ContactCard
-                  name={alternateContacts[0].name}
-                  email={alternateContacts[0].email}
-                  phone={alternateContacts[0].phone}
-                />
-                <ContactCard
-                  name={alternateContacts[1].name}
-                  email={alternateContacts[1].email}
-                  phone={alternateContacts[1].phone}
-                />
+          <div className="relative bg-[#34043C] px-6">
+            <div className="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center">
+              <h1 className="font-semibold">OR</h1>
             </div>
           </div>
-
         </div>
-        {/* --- End Responsive Contact Cards Section --- */}
 
+  <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-8 items-center lg:items-start justify-center">
+          <div className="flex flex-col items-center mb-6 lg:mb-0">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#FF7620] mb-4 text-center">Primary Organizer</h3>
+           <Card className="contact-scalee w-[80vw] lg:w-[20vw] md:w-[35vw] max-w-lg lg:max-w-xl xl:max-w-2xl h-60 bg-black/40 contact-bg p-6 border-none rounded-2xl relative overflow-hidden hover:border-[#FF7620]/50 transition-all duration-300">
+              <div className="space-y-4 relative z-10">
+                <h4 className="text-xl font-bold text-white">Tomson J Finosh.</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 text-sm">
+                    <Mail className="w-4 h-4 text-[#FF7620]" />
+                    <span className="text-gray-300">tj16279@gmail.com</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-sm">
+                    <Phone className="w-4 h-4 text-[#FF7620]" />
+                    <span className="text-gray-300">9895292919</span>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </div>
+
+          <div className="flex flex-col items-center">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#FF7620] mb-4 text-center">Alternate Contacts</h3>
+            <div className="flex flex-col sm:flex-row gap-4 items-center">
+              <Card className="contact-scalee w-[80vw] lg:w-[20vw] md:w-[35vw] max-w-lg lg:max-w-xl xl:max-w-2xl h-60 bg-black/40 contact-bg p-6 border-none rounded-2xl relative overflow-hidden hover:border-[#FF7620]/50 transition-all duration-300">
+                <div className="space-y-4 relative z-10">
+                  <h4 className="text-xl font-bold text-white">Vaishnav A Nair.</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3 text-sm">
+                      <Mail className="w-4 h-4 text-[#FF7620]" />
+                      <span className="text-gray-300">vaishnavanair@gmail.com</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm">
+                      <Phone className="w-4 h-4 text-[#FF7620]" />
+                      <span className="text-gray-300">9400468722</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="contact-scalee w-[80vw] lg:w-[20vw] md:w-[35vw] max-w-lg lg:max-w-xl xl:max-w-2xl h-60 bg-black/40 contact-bg p-6 border-none rounded-2xl relative overflow-hidden hover:border-[#FF7620]/50 transition-all duration-300">
+                <div className="space-y-4 relative z-10">
+                  <h4 className="text-xl font-bold text-white">Tims Tittus</h4>
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3 text-sm">
+                      <Mail className="w-4 h-4 text-[#FF7620]" />
+                      <span className="text-gray-300">timstittus1@gmail.com</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-sm">
+                      <Phone className="w-4 h-4 text-[#FF7620]" />
+                      <span className="text-gray-300">9946116910</span>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  );
-};
-
-export default ContactPage;
+  )
+}
