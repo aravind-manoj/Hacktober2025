@@ -22,7 +22,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-[#34043C] text-white">
       <div className="pt-12 pb-8">
-        <h1 className={`text-5xl md:text-6xl lg:text-7xl font-bold text-center text-[#FF7620] tracking-[0.05em] ${Infinite.className}`}> 
+        <h1 className={`text-5xl md:text-6xl lg:text-7xl font-bold text-center text-[#FF7620] tracking-[0.01em] ${Infinite.className}`}> 
           CONTACT
         </h1>
       </div>
@@ -70,7 +70,7 @@ export default function ContactPage() {
               />
               <Button
                 type="submit"
-                className="bg-[#FF7620] h-12 w-full md:w-2/3 hover:bg-[#FF8A40] text-white font-bold px-12 py-3 rounded-full text-base transition-all duration-300 hover:scale-105"
+                className="bg-[#FF6200] h-12 w-full md:w-2/3 hover:bg-[#FF8A40] text-black font-bold px-12 py-3 rounded-lg text-base transition-all duration-300 hover:scale-105"
               >
                 SEND
               </Button>
@@ -93,28 +93,28 @@ export default function ContactPage() {
 
         <div className="relative flex items-center justify-center my-16">
           <div className="absolute inset-0 flex items-center">
-            <div className="w-full border-t-2 border-dotted border-purple-400/40" />
+            <div className="w-full border-t-[0.5px] border border-black" />
           </div>
           <div className="relative bg-[#34043C] px-6">
-            <div className="w-8 h-8 rounded-full bg-purple-500/30 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full flex items-center justify-center">
               <h1 className="font-semibold">OR</h1>
             </div>
           </div>
         </div>
 
-  <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-8 items-center lg:items-start justify-center">
+  <div className={`flex flex-col  lg:flex-row gap-8 lg:gap-12 mb-8 items-center lg:items-start justify-center ${Hanuman.className}`}>
           <div className="flex flex-col items-center mb-6 lg:mb-0">
             <h3 className="text-2xl md:text-3xl font-bold text-[#FF7620] mb-4 text-center">Primary Organizer</h3>
            <Card className="contact-scalee w-[80vw] lg:w-[20vw] md:w-[35vw] max-w-lg lg:max-w-xl xl:max-w-2xl h-60 bg-black/40 contact-bg p-6 border-none rounded-2xl relative overflow-hidden hover:border-[#FF7620]/50 transition-all duration-300">
               <div className="space-y-4 relative z-10">
-                <h4 className="text-xl font-bold text-white">Tomson J Finosh.</h4>
+                <h4 className="text-xl font-bold text-[#AB54BA] text-center">Tomson J Finosh.</h4>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3 text-sm">
-                    <Mail className="w-4 h-4 text-[#FF7620]" />
+                    <Mail className="w-4 h-4" color="#ffffff" />
                     <span className="text-gray-300">tj16279@gmail.com</span>
                   </div>
                   <div className="flex items-center gap-3 text-sm">
-                    <Phone className="w-4 h-4 text-[#FF7620]" />
+                    <Phone className="w-4 h-4 " color="#ffffff" />
                     <span className="text-gray-300">9895292919</span>
                   </div>
                 </div>
@@ -127,14 +127,14 @@ export default function ContactPage() {
             <div className="flex flex-col sm:flex-row gap-4 items-center">
               <Card className="contact-scalee w-[80vw] lg:w-[20vw] md:w-[35vw] max-w-lg lg:max-w-xl xl:max-w-2xl h-60 bg-black/40 contact-bg p-6 border-none rounded-2xl relative overflow-hidden hover:border-[#FF7620]/50 transition-all duration-300">
                 <div className="space-y-4 relative z-10">
-                  <h4 className="text-xl font-bold text-white">Vaishnav A Nair.</h4>
+                  <h4 className="text-xl font-bold text-[#AB54BA] text-center">Vaishnav A Nair.</h4>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3 text-sm">
-                      <Mail className="w-4 h-4 text-[#FF7620]" />
+                      <Mail className="w-4 h-4" color="#ffffff" />
                       <span className="text-gray-300">vaishnavanair@gmail.com</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm">
-                      <Phone className="w-4 h-4 text-[#FF7620]" />
+                      <Phone className="w-4 h-4" color="#ffffff" />
                       <span className="text-gray-300">9400468722</span>
                     </div>
                   </div>
@@ -143,14 +143,14 @@ export default function ContactPage() {
 
               <Card className="contact-scalee w-[80vw] lg:w-[20vw] md:w-[35vw] max-w-lg lg:max-w-xl xl:max-w-2xl h-60 bg-black/40 contact-bg p-6 border-none rounded-2xl relative overflow-hidden hover:border-[#FF7620]/50 transition-all duration-300">
                 <div className="space-y-4 relative z-10">
-                  <h4 className="text-xl font-bold text-white">Tims Tittus</h4>
+                  <h4 className="text-xl font-bold text-[#AB54BA] text-center">Tims Tittus</h4>
                   <div className="space-y-3">
                     <div className="flex items-center gap-3 text-sm">
-                      <Mail className="w-4 h-4 text-[#FF7620]" />
+                      <Mail className="w-4 h-4" color="#ffffff"  />
                       <span className="text-gray-300">timstittus1@gmail.com</span>
                     </div>
                     <div className="flex items-center gap-3 text-sm">
-                      <Phone className="w-4 h-4 text-[#FF7620]" />
+                      <Phone color="#ffffff"  className="w-4 h-4 " />
                       <span className="text-gray-300">9946116910</span>
                     </div>
                   </div>
