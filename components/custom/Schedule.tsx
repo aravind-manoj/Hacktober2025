@@ -54,9 +54,9 @@ const EventCard = ({ time, title, variant = "filled", color = "orange" }: {
           />
         )}
 
-        <p className="text-sm font-medium opacity-80 relative z-10">{time}</p>
+        <p className="text-sm font-medium opacity-80 relative z-11">{time}</p>
         {/* Added whitespace-pre-line here */}
-        <h2 className="text-2xl relative z-10 whitespace-pre-line">{title}</h2>
+        <h2 className="text-2xl relative z-11 whitespace-pre-line">{title}</h2>
       </div>
     </div>
   );
@@ -86,17 +86,13 @@ export default function EventSchedule() {
         {isMobile ? (
           
           <div>
-            <h1 className={`text-5xl md:text-7xl z-10 gap-0.5 font-black text-lime-400 mb-8 text-center tracking-widest ${infiniteBeyond.className}`}>
-        EVENT
+            <h1 className={`text-4xl md:text-5xl/normal text-[#62FF00] mb-8 text-center tracking-widest relative z-11 ${infiniteBeyond.className}`}>
+        EVENT SCHEDULE
             </h1>
-            <h1 className={`text-5xl md:text-7xl z-10 gap-0.5 font-black text-lime-400 mb-8 text-center tracking-widest ${infiniteBeyond.className}`}>
-        SCHEDULE
-            </h1>
-            
           </div>
         ) : (
           <div>
-            <h1 className={`text-5xl md:text-7xl z-10 font-black text-lime-400 mb-8 text-center tracking-widest ${infiniteBeyond.className}`}>
+            <h1 className={`text-5xl md:text-7xl font-black text-lime-400 mb-8 text-center tracking-widest relative z-11 ${infiniteBeyond.className}`}>
         EVENT SCHEDULE
             </h1>
           </div>
@@ -114,11 +110,11 @@ export default function EventSchedule() {
               clipPath: 'polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%)'
             }}
           >
-            <div className="flex items-center gap-2 relative z-10">
+            <div className="flex items-center gap-2 relative z-11">
               <Calendar className="w-5 h-5" />
               <span>25th October 2025</span>
             </div>
-            <div className="flex items-center gap-2 relative z-10">
+            <div className="flex items-center gap-2 relative z-11">
               <MapPin className="w-5 h-5" />
               <span>Travancore International Convention Centre</span>
             </div>
@@ -127,16 +123,16 @@ export default function EventSchedule() {
       </div>
 
       {/* Dark clouds scattered widely */}
-      <img src="/assets/dark_cloud.svg" className="absolute z-0 top-10 left-4" />
-      <img src="/assets/dark_cloud.svg" className="absolute z-0 top-20 right-8" />
-      <img src="/assets/dark_cloud.svg" className="absolute z-0 top-1/3 left-1/4" />
-      <img src="/assets/dark_cloud.svg" className="absolute z-0 top-2/3 right-1/4" />
-      <img src="/assets/dark_cloud.svg" className="absolute z-0 bottom-32 left-8" />
-      <img src="/assets/dark_cloud.svg" className="absolute z-0 bottom-20 right-12" />
+      <img src="/assets/dark_cloud.svg" className="absolute z-9 top-10 left-4" />
+      <img src="/assets/dark_cloud.svg" className="absolute z-9 top-20 right-8" />
+      <img src="/assets/dark_cloud.svg" className="absolute z-9 top-1/3 left-1/4" />
+      <img src="/assets/dark_cloud.svg" className="absolute z-9 top-2/3 right-1/4" />
+      <img src="/assets/dark_cloud.svg" className="absolute z-9 bottom-32 left-8" />
+      <img src="/assets/dark_cloud.svg" className="absolute z-9 bottom-20 right-12" />
 
 
       {/* Schedule Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl w-full z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl w-full z-11">
         {schedule.map((item, idx) => (
           <EventCard
             key={idx}
