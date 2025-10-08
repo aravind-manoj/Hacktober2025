@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import { Calendar, MapPin } from "lucide-react";
 import localFont from "next/font/local";
 import Image from "next/image";
+import { useIsMobile } from "@/lib/hooks/mobile";
 
 const infiniteBeyond = localFont({
   src: "../../app/fonts/infinite_beyond.ttf"
@@ -61,6 +63,7 @@ const EventCard = ({ time, title, variant = "filled", color = "orange" }: {
 };
 
 export default function EventSchedule() {
+  const isMobile = useIsMobile();
   const schedule = [
     { time: "09:00 AM - 10:00 AM", title: "Inauguration\n Ceremony", variant: "filled", color: "orange" },
     { time: "10:00 AM Onwards", title: "Hackathon\n Kick Off", variant: "outline", color: "lime" },
@@ -74,11 +77,31 @@ export default function EventSchedule() {
   ];
 
   return (
+
+    
     <main id="schedule" className="min-h-screen bg-[#0D000F] text-white flex flex-col items-center py-12 px-6 relative pb-[200px]">
       {/* Title */}
-      <h1 className={`text-5xl md:text-7xl z-10 font-black text-lime-400 mb-8 text-center tracking-widest ${infiniteBeyond.className}`}>
+      
+      <div>
+        {isMobile ? (
+          
+          <div>
+            <h1 className={`text-5xl md:text-7xl z-10 gap-0.5 font-black text-lime-400 mb-8 text-center tracking-widest ${infiniteBeyond.className}`}>
+        EVENT
+            </h1>
+            <h1 className={`text-5xl md:text-7xl z-10 gap-0.5 font-black text-lime-400 mb-8 text-center tracking-widest ${infiniteBeyond.className}`}>
+        SCHEDULE
+            </h1>
+            
+          </div>
+        ) : (
+          <div>
+            <h1 className={`text-5xl md:text-7xl z-10 font-black text-lime-400 mb-8 text-center tracking-widest ${infiniteBeyond.className}`}>
         EVENT SCHEDULE
-      </h1>
+            </h1>
+          </div>
+        )}
+      </div>
 
       {/* Header Info */}
       <div className="relative mb-10 max-w-6xl z-10">
