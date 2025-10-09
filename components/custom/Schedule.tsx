@@ -145,14 +145,28 @@ export default function EventSchedule() {
       </div>
 
       <Image
-        src={"/assets/hero-item-2.svg"}
+        src={"/assets/schedule-item-3.svg"}
+        width={300}
+        height={300}
+        alt="Bat"
+        className="absolute w-0 md:w-[14vw] max-w-64 bottom-20 left-0 z-10"
+      />
+      <Image
+        src={"/assets/schedule-item-4.svg"}
+        width={300}
+        height={300}
+        alt="Bat"
+        className="absolute w-0 md:w-[25vw] max-w-64 bottom-16 right-0 z-10"
+      />
+      <Image
+        src={"/assets/schedule-item-1.svg"}
         width={800}
         height={200}
         alt="ground"
         className="w-full absolute bottom-0 left-0"
       />
       <Image
-        src={"/assets/hero-item-3.svg"}
+        src={"/assets/schedule-item-2.svg"}
         width={800}
         height={200}
         alt="ground"

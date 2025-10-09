@@ -21,7 +21,7 @@ interface TicketCardProps {
 
 function TicketCard({ heading, price, perks, isSpecial = false, url }: TicketCardProps) {
   return (
-    <Link href={url} className="flex rounded-md bg-black p-3 h-[450px] w-[320px] m-2 z-10">
+    <Link href={url} className="flex rounded-lg bg-black p-5 h-[450px] w-[320px] m-2 z-10">
       <div className={`rounded-tr-[100px] rounded-bl-[100px] ${isSpecial ? 'bg-gradient-to-br from-[#FF6B35] to-[#F7931E]' : 'bg-[#62FF00]'} flex-1 w-full border-8 ${isSpecial ? 'border-[#FF4500]' : 'border-[#69D228]'} p-6 flex flex-col justify-center items-center`}>
         <div className="text-center mb-6">
           <h2 className={`${hanuman.className} text-xl text-[#2B0032] mb-3`}>
@@ -128,7 +128,7 @@ export default function Tickets() {
   ];
 
   return (
-    <section className="bg-[#2b0032] w-full min-h-screen h-fit relative overflow-hidden">
+    <section className="bg-[#34043C] w-full min-h-screen h-fit relative overflow-hidden pb-[200px]">
       <div className="flex flex-col w-full gap-4 pb-12">
         <h1 className={`text-5xl md:text-7xl ${infiniteBeyond.className} text-[#62FF00] mx-4 text-center mt-14 mb-8`}>
           Tickets
