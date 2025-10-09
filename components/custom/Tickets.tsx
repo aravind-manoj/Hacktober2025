@@ -148,6 +148,20 @@ export default function Tickets() {
         </div>
       </div>
 
+      <Image
+        src={"/assets/events-item-3.svg"}
+        width={300}
+        height={300}
+        alt="Village"
+        className="absolute w-0 md:w-[20vw] max-w-xl bottom-[9vw] left-10 z-10"
+      />
+      <Image
+        src={"/assets/events-item-4.svg"}
+        width={300}
+        height={300}
+        alt="Batman"
+        className="absolute w-0 md:w-[15vw] max-w-64 bottom-[7vw] right-0 z-10"
+      />
       {/* Ground Decoration */}
       <Image
         src={"/assets/events-item-1.svg"}
