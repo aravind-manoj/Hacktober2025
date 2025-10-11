@@ -12,13 +12,7 @@ const Infinite = Local({ src: "../../app/fonts/infinite_beyond.ttf" })
 const Hanuman = Local({ src: "../../app/fonts/hanuman.ttf" })
 
 export default function ContactPage() {
-  // const [formData, setFormData] = useState({
-  //   name: "",
-  //   email: "",
-  //   phone: "",
-  //   inquiry: "",
-  // })
-
+ 
   return (
     <div id="contact" className="min-h-screen bg-[#34043C] text-white">
       <div className="pt-12 pb-8">
@@ -77,17 +71,20 @@ export default function ContactPage() {
             </form>
           </div>
 
-          <div className="w-full h-[400px] lg:h-full min-h-[350px] bg-gray-200 rounded-lg overflow-hidden">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3932.4622776506726!2d76.72351987585408!3d9.72685197767355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07cc024cb7c83f%3A0xc8944aaebb3ba492!2sSt.%20Joseph&#39;s%20College%20of%20Engineering%20and%20Technology%2C%20Palai%20(Autonomous)!5e0!3m2!1sen!2sin!4v1759766590920!5m2!1sen!2sin"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Location Map"
-            />
+          <div className="w-full h-full bg-transparent rounded-lg overflow-hidden shadow-md">
+            <div className="relative w-full h-[400px]">
+              <iframe
+                title="Travancore International Convention Centre map"
+                className="absolute inset-0 w-full h-full border-0"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=Travancore+International+Convention+Centre&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+                aria-label="Map showing Travancore International Convention Centre"
+              />
+            </div>
+          </div>
+
+
           </div>
         </div>
 
@@ -160,6 +157,5 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-    </div>
   )
 }
