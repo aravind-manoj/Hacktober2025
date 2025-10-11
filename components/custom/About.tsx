@@ -16,7 +16,7 @@ const AboutCard = ({ heading, index, children }: {
   children: ReactNode
 }) => {
   return (
-    <div className='flex flex-col w-full rounded-md bg-[#25002B] p-4 gap-2'>
+    <div className='flex flex-col w-full rounded-md bg-[#25002b7f] p-4 gap-2 z-10'>
       <span className={`text-2xl flex flex-row justify-between items-center ${infiniteBeyond.className}`}>
         <h1>{heading}</h1>
         <h1>/{index}</h1>
@@ -34,7 +34,7 @@ const AboutSection: React.FC = () => {
   return (
     <section id="about" className="relative bg-[#2B0032] min-h-screen w-full overflow-hidden gap-4 flex flex-col text-white md:pb-40">
       <div className=' px-4 pt-20 flex flex-col md:flex-row gap-4'>
-        <div className='flex flex-col gap-4 md:min-w-[50%]'>
+        <div className='flex flex-col gap-4 md:min-w-[50%] py-5'>
           <h1 className={`${infiniteBeyond.className} text-3xl md:text-5xl/normal text-[#62FF00] text-center`}>What's BREWING AT hacktober ?</h1>
           <p className='text-center'>How a wild idea became Kerala’s first Halloween-themed tech fest</p>
           <CustomButton text="Join Event" variant="light" className="pl-4 pr-1 py-5 sm:pl-4 sm:pr-1 sm:py-5 md:pl-5 md:pr-2 md:py-6 mx-auto" />
@@ -75,8 +75,49 @@ const AboutSection: React.FC = () => {
           </AboutCard>
         </div>
       </div>
-      <img src="/assets/black_bump.svg" className='w-full md:hidden' />
-      <Image src="/assets/desktop_black_bump.png" width={2000} height={200} alt="Spooky footer" className='hidden md:block absolute bottom-0 w-full'/>
+
+      <Image
+        src={"/assets/about-item-2.svg"}
+        width={300}
+        height={300}
+        alt="Mansion"
+        className="absolute w-0 md:w-[30vw] max-w-xl bottom-[7vw] left-0 z-10"
+      />
+      <Image
+        src={"/assets/about-item-3.svg"}
+        width={300}
+        height={300}
+        alt="3 pillars"
+        className="absolute w-0 md:w-[20vw] max-w-xl bottom-[-1vw] right-10 z-10"
+      />
+      <Image
+        src={"/assets/objects/about/bat-1.svg"}
+        width={300}
+        height={300}
+        alt="Bat"
+        className="absolute w-0 md:w-32 max-w-xl bottom-[18vw] left-[28%] animate-alive-motion-1"
+      />
+      <Image
+        src={"/assets/objects/about/bat-2.svg"}
+        width={300}
+        height={300}
+        alt="Bat"
+        className="absolute w-0 md:w-24 max-w-xl bottom-[12vw] left-[40%] animate-alive-motion-2"
+      />
+      <Image
+        src={"/assets/objects/about/bat-3.svg"}
+        width={300}
+        height={300}
+        alt="Bat"
+        className="absolute w-0 md:w-24 max-w-xl bottom-[10vw] left-[45%] animate-alive-motion-3"
+      />
+      <Image
+        src={"/assets/about-item-1.svg"}
+        width={800}
+        height={200}
+        alt="ground"
+        className="w-full absolute bottom-0 left-0"
+      />
     </section>
   );
 };
