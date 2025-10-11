@@ -149,19 +149,79 @@ export default function Tickets() {
       </div>
 
       <Image
+        src={"/assets/events-item-4.svg"}
+        width={300}
+        height={300}
+        alt="Village"
+        className="absolute w-full left-0 bottom-0 xl:top-0 animate-pulse"
+      />
+      <Image
         src={"/assets/events-item-3.svg"}
         width={300}
         height={300}
         alt="Village"
         className="absolute w-0 md:w-[20vw] max-w-xl bottom-[9vw] left-10 z-10"
       />
-      <Image
-        src={"/assets/events-item-4.svg"}
-        width={300}
-        height={300}
-        alt="Batman"
-        className="absolute w-0 md:w-[15vw] max-w-64 bottom-[7vw] right-0 z-10"
-      />
+      <div className="absolute w-0 h-0 md:w-[20vw] max-w-xl md:h-fit right-0 bottom-[7vw] z-10">
+        <div className="relative">
+          <Image
+            src={"/assets/objects/events/witch.svg"}
+            width={300}
+            height={300}
+            alt="Witch"
+            className="absolute right-0 bottom-0"
+          />
+          <Image
+            src={"/assets/objects/events/bat-1.svg"}
+            width={300}
+            height={300}
+            alt="Bat"
+            className="absolute w-24 right-0 bottom-[33vw] min-[1500px]:bottom-[495px] animate-alive-motion-3"
+          />
+          <Image
+            src={"/assets/objects/events/bat-3.svg"}
+            width={300}
+            height={300}
+            alt="Bat"
+            className="absolute w-24 right-[50px] bottom-[36vw] min-[1500px]:bottom-[540px] animate-alive-motion-2"
+          />
+          <Image
+            src={"/assets/objects/events/bat-3.svg"}
+            width={300}
+            height={300}
+            alt="Bat"
+            className="absolute w-24 right-0 bottom-[28vw] min-[1500px]:bottom-[420px] animate-alive-motion-1"
+          />
+          <Image
+            src={"/assets/objects/events/bat-4.svg"}
+            width={300}
+            height={300}
+            alt="Bat"
+            className="absolute w-24 right-[90px] bottom-[31vw] min-[1500px]:bottom-[465px] animate-alive-motion-1"
+          />
+          <Image
+            src={"/assets/objects/events/bat-5.svg"}
+            width={300}
+            height={300}
+            alt="Bat"
+            className="absolute w-20 right-[150px] bottom-[34vw] min-[1500px]:bottom-[510px] animate-alive-motion-2"
+          />
+          <Image
+            src={"/assets/objects/events/bat-6.svg"}
+            width={300}
+            height={300}
+            alt="Bat"
+            className="absolute w-20 right-[200px] bottom-[36vw] min-[1500px]:bottom-[540px] animate-alive-motion-3"
+          />
+          <Image
+            src={"/assets/objects/events/bat-7.svg"}
+            width={300}
+            height={300}
+            alt="Bat"
+            className="absolute w-16 right-[240px] bottom-[33vw] min-[1500px]:bottom-[495px] animate-alive-motion-1"
+          />
+        </div>
+      </div>
       {/* Ground Decoration */}
       <Image
         src={"/assets/events-item-1.svg"}
