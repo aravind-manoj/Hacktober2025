@@ -153,7 +153,7 @@ export default function Tickets() {
         width={300}
         height={300}
         alt="Village"
-        className="absolute w-full left-0 bottom-0 xl:top-0 animate-pulse"
+        className="absolute w-0 md:w-full left-0 bottom-0 xl:top-0 animate-pulse"
       />
       <Image
         src={"/assets/events-item-3.svg"}

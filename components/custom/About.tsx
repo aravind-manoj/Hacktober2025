@@ -34,7 +34,7 @@ const AboutSection: React.FC = () => {
   return (
     <section id="about" className="relative bg-[#2B0032] min-h-screen w-full overflow-hidden gap-4 flex flex-col text-white md:pb-40">
       <div className=' px-4 pt-20 flex flex-col md:flex-row gap-4'>
-        <div className='flex flex-col gap-4 md:min-w-[50%]'>
+        <div className='flex flex-col gap-4 md:min-w-[50%] py-5'>
           <h1 className={`${infiniteBeyond.className} text-3xl md:text-5xl/normal text-[#62FF00] text-center`}>What's BREWING AT hacktober ?</h1>
           <p className='text-center'>How a wild idea became Kerala’s first Halloween-themed tech fest</p>
           <CustomButton text="Join Event" variant="light" className="pl-4 pr-1 py-5 sm:pl-4 sm:pr-1 sm:py-5 md:pl-5 md:pr-2 md:py-6 mx-auto" />
