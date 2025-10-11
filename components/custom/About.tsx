@@ -16,7 +16,7 @@ const AboutCard = ({ heading, index, children }: {
   children: ReactNode
 }) => {
   return (
-    <div className='flex flex-col w-full rounded-md bg-[#25002B] p-4 gap-2'>
+    <div className='flex flex-col w-full rounded-md bg-[#25002b7f] p-4 gap-2 z-10'>
       <span className={`text-2xl flex flex-row justify-between items-center ${infiniteBeyond.className}`}>
         <h1>{heading}</h1>
         <h1>/{index}</h1>
@@ -75,8 +75,49 @@ const AboutSection: React.FC = () => {
           </AboutCard>
         </div>
       </div>
-      <img src="/assets/black_bump.svg" className='w-full md:hidden' />
-      <Image src="/assets/desktop_black_bump.png" width={2000} height={200} alt="Spooky footer" className='hidden md:block absolute bottom-0 w-full'/>
+
+      <Image
+        src={"/assets/about-item-2.svg"}
+        width={300}
+        height={300}
+        alt="Mansion"
+        className="absolute w-0 md:w-[30vw] max-w-xl bottom-[7vw] left-0 z-10"
+      />
+      <Image
+        src={"/assets/about-item-3.svg"}
+        width={300}
+        height={300}
+        alt="3 pillars"
+        className="absolute w-0 md:w-[20vw] max-w-xl bottom-[-1vw] right-10 z-10"
+      />
+      <Image
+        src={"/assets/objects/about/bat-1.svg"}
+        width={300}
+        height={300}
+        alt="Bat"
+        className="absolute w-0 md:w-32 max-w-xl bottom-[18vw] left-[28%] animate-alive-motion-1"
+      />
+      <Image
+        src={"/assets/objects/about/bat-2.svg"}
+        width={300}
+        height={300}
+        alt="Bat"
+        className="absolute w-0 md:w-24 max-w-xl bottom-[12vw] left-[40%] animate-alive-motion-2"
+      />
+      <Image
+        src={"/assets/objects/about/bat-3.svg"}
+        width={300}
+        height={300}
+        alt="Bat"
+        className="absolute w-0 md:w-24 max-w-xl bottom-[10vw] left-[45%] animate-alive-motion-3"
+      />
+      <Image
+        src={"/assets/about-item-1.svg"}
+        width={800}
+        height={200}
+        alt="ground"
+        className="w-full absolute bottom-0 left-0"
+      />
     </section>
   );
 };
