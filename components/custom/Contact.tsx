@@ -14,7 +14,7 @@ const Hanuman = Local({ src: "../../app/fonts/hanuman.ttf" })
 export default function ContactPage() {
  
   return (
-    <div id="contact" className="min-h-screen bg-[#34043C] text-white">
+    <div id="contact" className="min-h-screen mb-0 bg-[#34043C] text-white">
       <div className="pt-12 pb-8">
         <h1 className={`text-5xl md:text-6xl lg:text-7xl font-bold text-center text-[#FF7620] tracking-[0.01em] ${Infinite.className}`}> 
           CONTACT
@@ -99,7 +99,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-  <div className={`flex flex-col  lg:flex-row gap-8 lg:gap-12 mb-8 items-center lg:items-start justify-center ${Hanuman.className}`}>
+  <div className={`flex flex-col  lg:flex-row gap-8 lg:gap-12 pb-10 items-center lg:items-start justify-center ${Hanuman.className}`}>
           <div className="flex flex-col items-center mb-6 lg:mb-0">
             <h3 className="text-2xl md:text-3xl font-bold text-[#FF7620] mb-4 text-center">Primary Organizer</h3>
            <Card className="contact-scalee w-[80vw] lg:w-[20vw] md:w-[35vw] max-w-lg lg:max-w-xl xl:max-w-2xl h-60 bg-black/40 contact-bg p-6 border-none rounded-2xl relative overflow-hidden hover:border-[#FF7620]/50 transition-all duration-300">
@@ -157,5 +157,5 @@ export default function ContactPage() {
           </div>
         </div>
       </div>
-  )
-}
+    )
+  }
